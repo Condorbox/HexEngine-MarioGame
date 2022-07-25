@@ -5,6 +5,9 @@ import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import Util.Time;
 
+import java.nio.FloatBuffer;
+import java.util.Map;
+
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11C.*;
@@ -90,6 +93,8 @@ public class Window {
         }
 
         //Set Callbacks //TODO make joystick callbacks https://www.glfw.org/docs/3.3.2/input_guide.html#joystick
+                        //https://javadoc.jmonkeyengine.org/v3.4.0-beta3/com/jme3/input/lwjgl/GlfwJoystickInput.GlfwJoystick.html
+                        //https://www.programcreek.com/java-api-examples/doc/?api=com.jme3.input.event.JoyButtonEvent
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
         glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
