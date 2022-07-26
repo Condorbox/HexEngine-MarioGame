@@ -1,6 +1,7 @@
 package Hex;
 
 import Renderer.Shader;
+import Util.Time;
 import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 
@@ -97,10 +98,12 @@ public class LevelEditorScene extends Scene{
     @Override
     public void update(float deltaTime) {
         camera.position.x -= deltaTime * 50.0f;
+        camera.position.y -= deltaTime * 20.0f;
 
         defaultShader.use();
         defaultShader.uploadMath4f("uProjection", camera.getProjectionMatrix());
         defaultShader.uploadMath4f("uView", camera.getViewMatrix());
+        defaultShader.uploadFloat("uTime", Time.getTime());
         //Bind current VAO
         glBindVertexArray(vaoID);
 
