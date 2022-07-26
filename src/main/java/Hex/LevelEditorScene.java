@@ -1,5 +1,7 @@
 package Hex;
 
+import Components.FontRenderer;
+import Components.SpriteRenderer;
 import Renderer.Shader;
 import Renderer.Texture;
 import Util.Time;
@@ -53,12 +55,20 @@ public class LevelEditorScene extends Scene{
     private Shader defaultShader;
     private Texture testTexture;
 
+    private GameObject testGameObject;
+    private boolean firstTime = false;
+
     public LevelEditorScene(){
 
     }
 
     @Override
     public void init(){
+        System.out.println("Creating GameObject ...");
+        testGameObject = new GameObject("test Game Object");
+        testGameObject.addComponent(new SpriteRenderer());
+        addGameObjectToScene(testGameObject);
+
         camera = new Camera(new Vector2f());
         defaultShader = new Shader("Assets/Shaders/default.glsl");
         defaultShader.compile();
@@ -132,5 +142,18 @@ public class LevelEditorScene extends Scene{
         glBindVertexArray(0);
 
         defaultShader.detach();
+
+        if(!firstTime){
+            System.out.println("Creating GameObject 2 !");
+            GameObject testGameObject2 = new GameObject("Test game object 2");
+            testGameObject2.addComponent(new SpriteRenderer());
+            testGameObject2.addComponent(new FontRenderer());
+            addGameObjectToScene(testGameObject2);
+            firstTime = true;
+        }
+
+        for (GameObject gameObject : gameObjects){
+            gameObject.update(deltaTime);
+        }
     }
 }
