@@ -2,6 +2,7 @@ package Hex;
 
 import Components.SpriteRenderer;
 import Components.Transform;
+import Util.AssetPool;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
@@ -33,6 +34,12 @@ public class LevelEditorScene extends Scene{
                 this.addGameObjectToScene(gameObject);
             }
         }
+
+        loadResources();
+    }
+
+    private void loadResources() {
+        AssetPool.getShader("Assets/Shaders/default.glsl");
     }
 
     @Override
