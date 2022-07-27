@@ -1,16 +1,24 @@
 package Hex;
 
 import Components.Component;
+import Components.Transform;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameObject {
     private String name;
+    public Transform transform;
     private List<Component> components;
 
     public GameObject(String name){
         this.name = name;
+        this.transform = new Transform();
+        components = new ArrayList<>();
+    }
+    public GameObject(String name, Transform transform){
+        this.name = name;
+        this.transform = transform;
         components = new ArrayList<>();
     }
 

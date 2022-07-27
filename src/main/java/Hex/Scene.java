@@ -1,13 +1,15 @@
 package Hex;
 
+import Renderer.Renderer;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Scene {
-
     protected Camera camera;
     private boolean isRunning = false;
     protected List<GameObject> gameObjects = new ArrayList<>();
+    protected Renderer renderer = new Renderer();
 
     public Scene(){
 
@@ -20,6 +22,7 @@ public abstract class Scene {
     public void start(){
         for (GameObject gameObject : gameObjects){
             gameObject.start();
+            this.renderer.add(gameObject);
         }
         isRunning = true;
     }
@@ -32,6 +35,11 @@ public abstract class Scene {
         }else {
             gameObjects.add(gameObject);
             gameObject.start();
+            this.renderer.add(gameObject);
         }
+    }
+
+    public Camera camera(){
+        return camera;
     }
 }
