@@ -3,10 +3,6 @@ package Hex;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
-import Util.Time;
-
-import java.nio.FloatBuffer;
-import java.util.Map;
 
 import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
@@ -125,7 +121,7 @@ public class Window {
         Window.changeScene(0);
     }
     private void loop(){
-        float beginTime = Time.getTime();
+        float beginTime = (float) glfwGetTime();
         float endTime;
         float deltaTime = -1.0f;
 
@@ -142,7 +138,7 @@ public class Window {
 
             glfwSwapBuffers(glfwWindow);
 
-            endTime = Time.getTime();
+            endTime = (float) glfwGetTime();
             deltaTime = endTime - beginTime;
             beginTime = endTime;
         }
