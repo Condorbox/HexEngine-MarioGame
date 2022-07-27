@@ -24,7 +24,8 @@ public class Renderer {
     private void add(SpriteRenderer sprite) {
         boolean added = false;
         for (RenderBatch batch : batches) {
-            if (batch.hasRoom()) {
+            Texture tex = sprite.getTexture();
+            if (tex == null || (batch.hasTexture(tex) || batch.hasTextureRoom())) {
                 batch.addSprite(sprite);
                 added = true;
                 break;
