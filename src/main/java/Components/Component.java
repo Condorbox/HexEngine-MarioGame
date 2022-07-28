@@ -9,5 +9,11 @@ public abstract class Component {
     public void start(){
 
     }
-    public abstract void update(float deltaTime);
+    public void update(float deltaTime){
+
+    }
+
+    public void imGui(){
+
+    }
 }

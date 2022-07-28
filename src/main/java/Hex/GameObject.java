@@ -52,6 +52,12 @@ public class GameObject {
         c.gameObject = this;
     }
 
+    public void imGui(){
+        for (Component component : components){
+            component.imGui();
+        }
+    }
+
     public void start(){
         for (Component c : components){
             c.start();

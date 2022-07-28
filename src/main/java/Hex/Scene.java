@@ -1,6 +1,7 @@
 package Hex;
 
 import Renderer.Renderer;
+import imgui.ImGui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ public abstract class Scene {
     private boolean isRunning = false;
     protected List<GameObject> gameObjects = new ArrayList<>();
     protected Renderer renderer = new Renderer();
+    protected GameObject activeGameObject = null;
 
     public Scene(){
 
@@ -41,5 +43,19 @@ public abstract class Scene {
 
     public Camera camera(){
         return camera;
+    }
+
+    public void sceneImGui(){
+        if (activeGameObject != null){
+            ImGui.begin("Inspector");
+            activeGameObject.imGui();
+            ImGui.end();
+        }
+
+        imGui();
+    }
+
+    public void imGui(){
+
     }
 }
