@@ -7,17 +7,22 @@ import org.joml.Vector4f;
 public class SpriteRenderer extends Component{
     private Vector4f color;
     private Sprite sprite;
+    private int zIndex;
 
     private Transform lastTransform;
     private boolean isDirty = false;
 
     public SpriteRenderer(Vector4f color){
+        this.zIndex = 0;
         this.color = color;
         this.sprite = new Sprite(null);
+        isDirty = true;
     }
-    public SpriteRenderer(Sprite sprite){
+    public SpriteRenderer(Sprite sprite, int zIndex){
+        this.zIndex = zIndex;
         this.sprite = sprite;
         this.color = new Vector4f(1, 1, 1, 1);
+        isDirty = true;
     }
     @Override
     public void start(){
@@ -61,5 +66,13 @@ public class SpriteRenderer extends Component{
 
     public void setClean(){
         isDirty = false;
+    }
+
+    public int zIndex(){
+        return zIndex;
+    }
+
+    public void setZIndex(int zIndex){
+        this.zIndex = zIndex;
     }
 }
