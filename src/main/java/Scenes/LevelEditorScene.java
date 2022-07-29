@@ -1,18 +1,24 @@
-package Hex;
+package Scenes;
 
 import Components.*;
 
-import Renderer.Texture;
+import Hex.Camera;
+import Hex.GameObject;
+import Hex.Prefabs;
+import Scenes.Scene;
 import Util.AssetPool;
 
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
 
-public class LevelEditorScene extends Scene{
+public class LevelEditorScene extends Scene {
     private GameObject obj1;
     private Spritesheet entitySpritesheet;
     private Spritesheet spritesheet;
+
+   MouseControls mouseControls = new MouseControls();
+
     public LevelEditorScene(){
 
     }
@@ -56,6 +62,7 @@ public class LevelEditorScene extends Scene{
 
     @Override
     public void update(float deltaTime) {
+        mouseControls.update(deltaTime);
 
         for (GameObject gameObject : gameObjects){
             gameObject.update(deltaTime);
@@ -82,10 +89,10 @@ public class LevelEditorScene extends Scene{
             float spriteHeight = sprite.getHeight() * 4;
             int id = sprite.getTexId();
             Vector2f[] texCoords = sprite.getTexCoords();
-            System.out.println(spriteHeight);
             ImGui.pushID(i);
             if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[0].x, texCoords[0].y, texCoords[2].x, texCoords[2].y)) {
-                System.out.println("Button " + i + "clicked");
+                GameObject object = Prefabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
+                mouseControls.pickupObject(object);
             }
             ImGui.popID();
 

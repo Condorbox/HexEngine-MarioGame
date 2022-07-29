@@ -1,4 +1,4 @@
-package Hex;
+package Components;
 
 import Components.Component;
 import com.google.gson.*;

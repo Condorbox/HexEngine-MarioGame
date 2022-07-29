@@ -1,6 +1,9 @@
-package Hex;
+package Scenes;
 
-public class LevelScene extends Scene{
+import Hex.Window;
+import Scenes.Scene;
+
+public class LevelScene extends Scene {
 
     public LevelScene(){
         System.out.println("Level Scene");
