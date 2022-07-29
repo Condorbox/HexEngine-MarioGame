@@ -11,7 +11,7 @@ public class SpriteRenderer extends Component{
     private int zIndex = 0;
 
     private transient Transform lastTransform;
-    private transient boolean isDirty = false;
+    private transient boolean isDirty = true;
 
     public SpriteRenderer(){
 

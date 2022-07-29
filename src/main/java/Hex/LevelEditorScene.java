@@ -1,5 +1,6 @@
 package Hex;
 
+import Components.Rigidbody;
 import Components.SpriteRenderer;
 import Components.Spritesheet;
 import Components.Transform;
@@ -25,16 +26,16 @@ public class LevelEditorScene extends Scene{
         this.camera = new Camera(new Vector2f(-250, 0));
 
         if (levelLoaded) {
+            this.activeGameObject = gameObjects.get(0);
             return;
         }
-
-        spritesheet = AssetPool.getSpritesheet("Assets/Sprites/spritesheet.png");
 
         obj1 = new GameObject("Object 1", new Transform(new Vector2f(300, 100), new Vector2f(256, 256)));
         SpriteRenderer obj1SpriteRender = new SpriteRenderer();
         obj1SpriteRender.setSprite(spritesheet.getSprite(0));
         obj1SpriteRender.setZIndex(10);
         obj1.addComponent(obj1SpriteRender);
+        obj1.addComponent(new Rigidbody());
         addGameObjectToScene(obj1);
         this.activeGameObject = obj1;
 
@@ -43,18 +44,13 @@ public class LevelEditorScene extends Scene{
         obj2SpriteRender.setSprite(spritesheet.getSprite(14));
         obj2.addComponent(obj2SpriteRender);
         addGameObjectToScene(obj2);
-
-        /*Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String serialized = gson.toJson(obj1);
-        System.out.println(serialized);
-        GameObject obj = gson.fromJson(serialized, GameObject.class);
-        System.out.println(obj);*/
     }
 
     private void loadResources() {
         AssetPool.getShader("Assets/Shaders/default.glsl");
         AssetPool.addSpritesheet("Assets/Sprites/spritesheet.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/spritesheet.png"),
                 16, 16, 26, 0));
+        spritesheet = AssetPool.getSpritesheet("Assets/Sprites/spritesheet.png");
     }
 
     private int spriteIndex = 0;
@@ -72,7 +68,7 @@ public class LevelEditorScene extends Scene{
             if (spriteIndex > 4){
                 spriteIndex = 0;
             }
-            obj1.getComponent(SpriteRenderer.class).setSprite(spritesheet.getSprite(spriteIndex));
+            //gameObjects.get(0).getComponent(SpriteRenderer.class).setSprite(spritesheet.getSprite(spriteIndex));
         }
 
         for (GameObject gameObject : gameObjects){
