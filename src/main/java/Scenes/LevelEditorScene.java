@@ -19,7 +19,7 @@ public class LevelEditorScene extends Scene {
     private Spritesheet entitySpritesheet;
     private Spritesheet spritesheet;
 
-   MouseControls mouseControls = new MouseControls();
+   GameObject levelEditorComponents = new GameObject("Level Editor", new Transform(new Vector2f()));
 
     public LevelEditorScene(){
 
@@ -27,6 +27,9 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void init(){
+        levelEditorComponents.addComponent(new MouseControls());
+        levelEditorComponents.addComponent(new GridLines());
+
         loadResources();
 
         this.camera = new Camera(new Vector2f(-250, 0));
@@ -36,7 +39,7 @@ public class LevelEditorScene extends Scene {
             return;
         }
 
-        obj1 = new GameObject("Object 1", new Transform(new Vector2f(300, 100), new Vector2f(256, 256)));
+        /*obj1 = new GameObject("Object 1", new Transform(new Vector2f(300, 100), new Vector2f(256, 256)));
         SpriteRenderer obj1SpriteRender = new SpriteRenderer();
         obj1SpriteRender.setSprite(entitySpritesheet.getSprite(0));
         obj1SpriteRender.setZIndex(10);
@@ -49,7 +52,7 @@ public class LevelEditorScene extends Scene {
         SpriteRenderer obj2SpriteRender = new SpriteRenderer();
         obj2SpriteRender.setSprite(entitySpritesheet.getSprite(14));
         obj2.addComponent(obj2SpriteRender);
-        addGameObjectToScene(obj2);
+        addGameObjectToScene(obj2);*/
     }
 
     private void loadResources() {
@@ -62,15 +65,9 @@ public class LevelEditorScene extends Scene {
         spritesheet = AssetPool.getSpritesheet("Assets/Sprites/decorationsAndBlocks.png");
     }
 
-    float t = 0.0f;
     @Override
     public void update(float deltaTime) {
-        mouseControls.update(deltaTime);
-
-        float x = ((float)Math.sin(t) * 200.0f) + 600;
-        float y = ((float)Math.cos(t) * 200.0f) + 400;
-        t += 0.05f;
-        DebugDraw.addLine2D(new Vector2f(600, 400), new Vector2f(x, y), new Vector3f(0, 0, 1));
+        levelEditorComponents.update(deltaTime);
 
         for (GameObject gameObject : gameObjects){
             gameObject.update(deltaTime);
@@ -81,7 +78,7 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void imGui() {
-        ImGui.begin("Test Window");
+        ImGui.begin("Level Editor");
 
         ImVec2 windowPos = new ImVec2();
         ImGui.getWindowPos(windowPos);
@@ -98,9 +95,9 @@ public class LevelEditorScene extends Scene {
             int id = sprite.getTexId();
             Vector2f[] texCoords = sprite.getTexCoords();
             ImGui.pushID(i);
-            if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[0].x, texCoords[0].y, texCoords[2].x, texCoords[2].y)) {
-                GameObject object = Prefabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
-                mouseControls.pickupObject(object);
+            if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+                GameObject object = Prefabs.generateSpriteObject(sprite, spriteWidth / 2, spriteWidth / 2); //To make it 32 * 32
+                levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
             }
             ImGui.popID();
 
