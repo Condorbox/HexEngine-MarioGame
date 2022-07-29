@@ -5,12 +5,14 @@ import Components.*;
 import Hex.Camera;
 import Hex.GameObject;
 import Hex.Prefabs;
+import Renderer.DebugDraw;
 import Scenes.Scene;
 import Util.AssetPool;
 
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+import org.joml.Vector3f;
 
 public class LevelEditorScene extends Scene {
     private GameObject obj1;
@@ -60,9 +62,15 @@ public class LevelEditorScene extends Scene {
         spritesheet = AssetPool.getSpritesheet("Assets/Sprites/decorationsAndBlocks.png");
     }
 
+    float t = 0.0f;
     @Override
     public void update(float deltaTime) {
         mouseControls.update(deltaTime);
+
+        float x = ((float)Math.sin(t) * 200.0f) + 600;
+        float y = ((float)Math.cos(t) * 200.0f) + 400;
+        t += 0.05f;
+        DebugDraw.addLine2D(new Vector2f(600, 400), new Vector2f(x, y), new Vector3f(0, 0, 1));
 
         for (GameObject gameObject : gameObjects){
             gameObject.update(deltaTime);

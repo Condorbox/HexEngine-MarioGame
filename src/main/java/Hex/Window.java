@@ -1,5 +1,6 @@
 package Hex;
 
+import Renderer.DebugDraw;
 import Scenes.LevelEditorScene;
 import Scenes.LevelScene;
 import Scenes.Scene;
@@ -143,10 +144,13 @@ public class Window {
             //Poll events
             glfwPollEvents();
 
+            DebugDraw.beginFrame();
+
             glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
             if(deltaTime >= 0){
+                DebugDraw.draw();
                 currentScene.update(deltaTime);
             }
 

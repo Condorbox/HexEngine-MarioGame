@@ -1,5 +1,6 @@
 [
   {
+    "uid": 0,
     "name": "Object 1",
     "transform": {
       "position": {
@@ -17,8 +18,8 @@
         "properties": {
           "color": {
             "x": 1.0,
-            "y": 0.99999,
-            "z": 0.99999,
+            "y": 1.0,
+            "z": 1.0,
             "w": 1.0
           },
           "sprite": {
@@ -47,9 +48,10 @@
               }
             ],
             "width": 16.0,
-            "height": 0.0
+            "height": 16.0
           },
-          "zIndex": 10
+          "zIndex": 10,
+          "uid": 0
         }
       },
       {
@@ -61,12 +63,14 @@
             "x": 0.0,
             "y": 0.5,
             "z": 0.0
-          }
+          },
+          "uid": 1
         }
       }
     ]
   },
   {
+    "uid": 1,
     "name": "Object 2",
     "transform": {
       "position": {
@@ -114,9 +118,181 @@
               }
             ],
             "width": 16.0,
-            "height": 0.0
+            "height": 16.0
           },
-          "zIndex": 0
+          "zIndex": 0,
+          "uid": 2
+        }
+      }
+    ]
+  },
+  {
+    "uid": 2,
+    "name": "Sprite_Object_Gen",
+    "transform": {
+      "position": {
+        "x": -142.0,
+        "y": 524.89355
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "components": [
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "textID": 3,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.75
+              },
+              {
+                "x": 0.0,
+                "y": 0.75
+              },
+              {
+                "x": 0.0,
+                "y": 0.8333333
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 3
+        }
+      }
+    ]
+  },
+  {
+    "uid": 3,
+    "name": "Sprite_Object_Gen",
+    "transform": {
+      "position": {
+        "x": 331.3333,
+        "y": 37.202637
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "components": [
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "textID": 3,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 4
+        }
+      }
+    ]
+  },
+  {
+    "uid": 4,
+    "name": "Sprite_Object_Gen",
+    "transform": {
+      "position": {
+        "x": 898.0,
+        "y": 654.01776
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "components": [
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "textID": 3,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.75
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 5
         }
       }
     ]
