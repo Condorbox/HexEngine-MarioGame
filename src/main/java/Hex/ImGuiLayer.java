@@ -97,7 +97,7 @@ public class ImGuiLayer {
             io.setKeyAlt(io.getKeysDown(GLFW_KEY_LEFT_ALT) || io.getKeysDown(GLFW_KEY_RIGHT_ALT));
             io.setKeySuper(io.getKeysDown(GLFW_KEY_LEFT_SUPER) || io.getKeysDown(GLFW_KEY_RIGHT_SUPER));
 
-            if (!io.getWantCaptureKeyboard()){
+            if (!io.getWantCaptureKeyboard()) {
                 KeyListener.keyCallback(w, key, scancode, action, mods);
             }
         });
@@ -123,7 +123,7 @@ public class ImGuiLayer {
                 ImGui.setWindowFocus(null);
             }
 
-            if (!io.getWantCaptureMouse()) {
+            if (!io.getWantCaptureMouse() || GameViewWindow.getWantCaptureMouse()) {
                 MouseListener.mouseButtonCallback(w, button, action, mods);
             }
         });
@@ -152,6 +152,10 @@ public class ImGuiLayer {
             }
         });
 
+        // ------------------------------------------------------------
+        // Fonts configuration
+        // Read: https://raw.githubusercontent.com/ocornut/imgui/master/docs/FONTS.txt
+
         final ImFontAtlas fontAtlas = io.getFonts();
         final ImFontConfig fontConfig = new ImFontConfig(); // Natively allocated object, should be explicitly destroyed
 
@@ -168,11 +172,15 @@ public class ImGuiLayer {
         // Use freetype instead of stb_truetype to build a fonts texture
         //ImGuiFreeType.buildFontAtlas(fontAtlas, ImGuiFreeType.RasterizerFlags.LightHinting);
 
+
+        // Method initializes LWJGL3 renderer.
+        // This method SHOULD be called after you've initialized your ImGui configuration (fonts and so on).
+        // ImGui context should be created as well.
         imGuiGl3.init("#version 330 core");
     }
 
-    public void update(float deltaTime, Scene currentScene) {
-        startFrame(deltaTime);
+    public void update(float dt, Scene currentScene) {
+        startFrame(dt);
 
         // Any Dear ImGui code SHOULD go between ImGui.newFrame()/ImGui.render() methods
         ImGui.newFrame();
@@ -197,7 +205,6 @@ public class ImGuiLayer {
         // We SHOULD call those methods to update Dear ImGui state for the current frame
         final ImGuiIO io = ImGui.getIO();
         io.setDisplaySize(winWidth[0], winHeight[0]);
-
         io.setDisplayFramebufferScale(1f, 1f);
         io.setMousePos((float) mousePosX[0], (float) mousePosY[0]);
         io.setDeltaTime(deltaTime);
@@ -211,7 +218,6 @@ public class ImGuiLayer {
     private void endFrame() {
         // After Dear ImGui prepared a draw data, we use it in the LWJGL3 renderer.
         // At that moment ImGui will be rendered to the current OpenGL context.
-        //imGuiGl3.render(ImGui.getDrawData());
         imGuiGl3.renderDrawData(ImGui.getDrawData());
     }
 

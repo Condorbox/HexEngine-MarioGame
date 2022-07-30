@@ -15,7 +15,7 @@ public class MouseControls extends Component {
         Window.getScene().addGameObjectToScene(go);
     }
 
-    public void place() { //TODO Place the object in the scene
+    public void place() {
         this.holdingObject = null;
     }
 
@@ -29,6 +29,7 @@ public class MouseControls extends Component {
 
             if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
                 place();
+                System.out.println("Place");
             }
         }
     }
