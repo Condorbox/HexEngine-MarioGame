@@ -136,6 +136,7 @@ public class Window {
         imGuiLayer.initImGui();
 
         framebuffer = new Framebuffer(1920, 1080);
+        glViewport(0, 0, 1920, 1080);
 
         Window.changeScene(0);
     }
@@ -153,7 +154,7 @@ public class Window {
             glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            //framebuffer.bind();
+            framebuffer.bind();
 
             if(deltaTime >= 0){
                 DebugDraw.draw();
@@ -163,6 +164,7 @@ public class Window {
             framebuffer.unbind();
 
             imGuiLayer.update(deltaTime, currentScene);
+
             glfwSwapBuffers(glfwWindow);
 
             endTime = (float) glfwGetTime();
@@ -187,5 +189,13 @@ public class Window {
 
     public static void setHeight(int newHeight) {
         get().height = newHeight;
+    }
+
+    public static Framebuffer getFramebuffer() {
+        return get().framebuffer;
+    }
+
+    public static float getTargetAspectRatio() { //TODO return real monitor aspect ratio
+        return 16.0f / 9.0f;
     }
 }

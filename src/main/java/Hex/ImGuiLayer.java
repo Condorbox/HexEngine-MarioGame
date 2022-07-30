@@ -1,6 +1,7 @@
 package Hex;
 
 import Components.MouseControls;
+import Editor.GameViewWindow;
 import Scenes.Scene;
 import imgui.*;
 import imgui.callback.ImStrConsumer;
@@ -178,6 +179,7 @@ public class ImGuiLayer {
         setupDockspace();
         currentScene.sceneImGui();
         ImGui.showDemoWindow();
+        GameViewWindow.imGui();
         ImGui.end();
         ImGui.render();
 
