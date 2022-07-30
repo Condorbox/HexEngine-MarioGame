@@ -82,6 +82,10 @@ public class SpriteRenderer extends Component{
         this.zIndex = zIndex;
     }
 
+    public void setTexture(Texture texture) {
+        this.sprite.setTexture(texture);
+    }
+
     @Override
     public void imGui(){
         float[] imColor = {color.x, color.y, color.z, color.w};

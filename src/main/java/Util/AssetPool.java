@@ -25,7 +25,7 @@ public class AssetPool {
         }
     }
 
-    public static Texture getTexture(String resourceName) { //TODO texture save system to use instead of ID
+    public static Texture getTexture(String resourceName) {
         File file = new File(resourceName);
         if (AssetPool.textures.containsKey(file.getAbsolutePath())) {
             return AssetPool.textures.get(file.getAbsolutePath());
