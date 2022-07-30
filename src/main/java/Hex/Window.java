@@ -1,6 +1,7 @@
 package Hex;
 
 import Renderer.DebugDraw;
+import Renderer.Framebuffer;
 import Scenes.LevelEditorScene;
 import Scenes.LevelScene;
 import Scenes.Scene;
@@ -19,6 +20,7 @@ public class Window {
     private String title;
     private long glfwWindow;
     private ImGuiLayer imGuiLayer;
+    private Framebuffer framebuffer;
     public float r,g,b,a;
 
     private static Window window = null;
@@ -133,6 +135,8 @@ public class Window {
         imGuiLayer = new ImGuiLayer(glfwWindow);
         imGuiLayer.initImGui();
 
+        framebuffer = new Framebuffer(1920, 1080);
+
         Window.changeScene(0);
     }
     private void loop(){
@@ -149,10 +153,14 @@ public class Window {
             glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
+            framebuffer.bind();
+
             if(deltaTime >= 0){
                 DebugDraw.draw();
                 currentScene.update(deltaTime);
             }
+
+            framebuffer.unbind();
 
             imGuiLayer.update(deltaTime, currentScene);
             glfwSwapBuffers(glfwWindow);
