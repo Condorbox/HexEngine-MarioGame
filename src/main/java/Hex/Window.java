@@ -2,9 +2,13 @@ package Hex;
 
 import Renderer.DebugDraw;
 import Renderer.Framebuffer;
+import Renderer.PickingTexture;
+import Renderer.Renderer;
+import Renderer.Shader;
 import Scenes.LevelEditorScene;
 import Scenes.LevelScene;
 import Scenes.Scene;
+import Util.AssetPool;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
@@ -21,6 +25,7 @@ public class Window {
     private long glfwWindow;
     private ImGuiLayer imGuiLayer;
     private Framebuffer framebuffer;
+    private PickingTexture pickingTexture;
     public float r,g,b,a;
 
     private static Window window = null;
@@ -136,6 +141,7 @@ public class Window {
         imGuiLayer.initImGui();
 
         framebuffer = new Framebuffer(1920, 1080);
+        pickingTexture = new PickingTexture(1920, 1080);
         glViewport(0, 0, 1920, 1080);
 
         Window.changeScene(0);
@@ -145,9 +151,34 @@ public class Window {
         float endTime;
         float deltaTime = -1.0f;
 
+        Shader defaultShader = AssetPool.getShader("Assets/Shaders/default.glsl");
+        Shader pickingShader = AssetPool.getShader("Assets/Shaders/pickingShader.glsl");
+
         while (!glfwWindowShouldClose(glfwWindow)){
             //Poll events
             glfwPollEvents();
+
+            //Render pass 1. Render to picking texture
+            glDisable(GL_BLEND);
+            pickingTexture.enableWriting();
+
+            glViewport(0, 0, 1920, 1080);
+            glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+            Renderer.bindShader(pickingShader);
+            currentScene.render();
+
+            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT)) {
+                int x = (int)MouseListener.getScreenX();
+                int y = (int)MouseListener.getScreenY();
+                System.out.println(pickingTexture.readPixel(x, y));
+            }
+
+            pickingTexture.disableWriting();
+            glEnable(GL_BLEND);
+
+            //Render pass 2. Render actual game
 
             DebugDraw.beginFrame();
 
@@ -159,7 +190,9 @@ public class Window {
 
             if(deltaTime >= 0){
                 DebugDraw.draw();
+                Renderer.bindShader(defaultShader);
                 currentScene.update(deltaTime);
+                currentScene.render();
             }
 
             framebuffer.unbind();

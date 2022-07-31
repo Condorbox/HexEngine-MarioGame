@@ -83,7 +83,10 @@ public class LevelEditorScene extends Scene {
         for (GameObject gameObject : gameObjects){
             gameObject.update(deltaTime);
         }
+    }
 
+    @Override
+    public void render(){
         renderer.render();
     }
 
