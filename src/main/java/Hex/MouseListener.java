@@ -120,11 +120,11 @@ public class MouseListener {
         return (float) (get().lastY - get().yPos);
     }
 
-    public static float scrollX(){
+    public static float getScrollX(){
         return (float) get().scrollX;
     }
 
-    public static float scrollY(){
+    public static float getScrollY(){
         return (float) get().scrollY;
     }
 

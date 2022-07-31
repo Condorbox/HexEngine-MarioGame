@@ -27,12 +27,12 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void init(){
+        this.camera = new Camera(new Vector2f(-250, 0));
         levelEditorComponents.addComponent(new MouseControls());
         levelEditorComponents.addComponent(new GridLines());
+        levelEditorComponents.addComponent(new EditorCamera(camera));
 
         loadResources();
-
-        this.camera = new Camera(new Vector2f(-250, 0));
 
         if (levelLoaded) {
             return;
@@ -76,6 +76,7 @@ public class LevelEditorScene extends Scene {
     @Override
     public void update(float deltaTime) {
         levelEditorComponents.update(deltaTime);
+        camera.adjustProjection();
 
         for (GameObject gameObject : gameObjects){
             gameObject.update(deltaTime);
