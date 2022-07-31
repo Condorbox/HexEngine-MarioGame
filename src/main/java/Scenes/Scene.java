@@ -16,13 +16,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public abstract class Scene {
     protected Camera camera;
     private boolean isRunning = false;
     protected List<GameObject> gameObjects = new ArrayList<>();
     protected Renderer renderer = new Renderer();
-    protected GameObject activeGameObject = null;
     protected boolean levelLoaded = false;
 
     public Scene(){
@@ -56,16 +56,6 @@ public abstract class Scene {
 
     public Camera camera(){
         return camera;
-    }
-
-    public void sceneImGui(){
-        if (activeGameObject != null){
-            ImGui.begin("Inspector");
-            activeGameObject.imGui();
-            ImGui.end();
-        }
-
-        imGui();
     }
 
     public void imGui(){
@@ -124,5 +114,10 @@ public abstract class Scene {
             GameObject.init(maxGoId);
             levelLoaded = true;
         }
+    }
+
+    public GameObject getGameObject(int gameObjectId) {
+        Optional<GameObject> result = this.gameObjects.stream().filter(gameObject -> gameObject.uid() == gameObjectId).findFirst();
+        return result.orElse(null);
     }
 }
