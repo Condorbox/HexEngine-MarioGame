@@ -151,10 +151,11 @@ public class Window {
 
             DebugDraw.beginFrame();
 
+            framebuffer.bind();
+
             glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
 
-            framebuffer.bind();
 
             if(deltaTime >= 0){
                 DebugDraw.draw();
