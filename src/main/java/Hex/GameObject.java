@@ -65,14 +65,14 @@ public class GameObject {
     }
 
     public void start() {
-        for (Component c : components) {
-            c.start();
+        for (int i = 0; i < components.size(); i++){
+            components.get(i).start();
         }
     }
 
     public void update(float deltaTime) {
-        for (Component c : components) {
-            c.update(deltaTime);
+        for (int i = 0; i < components.size(); i++){
+            components.get(i).update(deltaTime);
         }
     }
 

@@ -35,7 +35,7 @@ public class LevelEditorScene extends Scene {
         levelEditorComponents.addComponent(new MouseControls());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(camera));
-        levelEditorComponents.addComponent(new TranslateGizmo(gizmos.getSprite(1), Window.getImGuiLayer().getPropertiesWindow())); //TODO Event System to change this
+        levelEditorComponents.addComponent(new GizmoSystem(gizmos));
 
         levelEditorComponents.start();
 
@@ -66,7 +66,7 @@ public class LevelEditorScene extends Scene {
         AssetPool.addSpritesheet("Assets/Sprites/decorationsAndBlocks.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/decorationsAndBlocks.png"),
                 16, 16, 81, 0));
         AssetPool.addSpritesheet("Assets/Sprites/gizmos.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/gizmos.png"),
-                24, 48, 2, 0));
+                24, 48, 3, 0));
         entitySpritesheet = AssetPool.getSpritesheet("Assets/Sprites/spritesheet.png");
         spritesheet = AssetPool.getSpritesheet("Assets/Sprites/decorationsAndBlocks.png");
 
