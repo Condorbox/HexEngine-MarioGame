@@ -5,7 +5,9 @@ import Components.*;
 import Hex.Camera;
 import Hex.GameObject;
 import Hex.Prefabs;
+import Hex.Window;
 import Renderer.DebugDraw;
+import Renderer.Texture;
 import Scenes.Scene;
 import Util.AssetPool;
 
@@ -27,12 +29,15 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void init(){
+        loadResources();
+        Spritesheet gizmos = AssetPool.getSpritesheet("Assets/Sprites/gizmos.png");
         this.camera = new Camera(new Vector2f(-250, 0));
         levelEditorComponents.addComponent(new MouseControls());
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(camera));
+        levelEditorComponents.addComponent(new TranslateGizmo(gizmos.getSprite(1), Window.getImGuiLayer().getPropertiesWindow())); //TODO Event System to change this
 
-        loadResources();
+        levelEditorComponents.start();
 
         if (levelLoaded) {
             return;
@@ -60,6 +65,8 @@ public class LevelEditorScene extends Scene {
                 16, 16, 26, 0));
         AssetPool.addSpritesheet("Assets/Sprites/decorationsAndBlocks.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/decorationsAndBlocks.png"),
                 16, 16, 81, 0));
+        AssetPool.addSpritesheet("Assets/Sprites/gizmos.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/gizmos.png"),
+                24, 48, 2, 0));
         entitySpritesheet = AssetPool.getSpritesheet("Assets/Sprites/spritesheet.png");
         spritesheet = AssetPool.getSpritesheet("Assets/Sprites/decorationsAndBlocks.png");
 
@@ -90,6 +97,10 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void imGui() {
+        ImGui.begin("Level Editor Stuff");
+        levelEditorComponents.imGui();
+        ImGui.end();
+
         ImGui.begin("Level Editor");
 
         ImVec2 windowPos = new ImVec2();

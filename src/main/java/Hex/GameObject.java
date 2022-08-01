@@ -13,6 +13,8 @@ public class GameObject {
     public Transform transform;
     private List<Component> components;
 
+    private boolean doSerialization = true;
+
     public GameObject(String name, Transform transform) {
         this.name = name;
         this.transform = transform;
@@ -80,5 +82,13 @@ public class GameObject {
 
     public static void init(int maxId) {
         ID_COUNTER = maxId;
+    }
+
+    public void setNoSerialize() {
+        this.doSerialization = false;
+    }
+
+    public boolean doSerialization() {
+        return this.doSerialization;
     }
 }
