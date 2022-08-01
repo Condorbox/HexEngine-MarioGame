@@ -1,7 +1,7 @@
 package Components;
 
+import Editor.HImGui;
 import Renderer.Texture;
-import imgui.ImGui;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
@@ -88,10 +88,12 @@ public class SpriteRenderer extends Component{
 
     @Override
     public void imGui(){
-        float[] imColor = {color.x, color.y, color.z, color.w};
-        if (ImGui.colorPicker4("Color Picker: ", imColor)) {
-            this.color.set(imColor[0], imColor[1], imColor[2], imColor[3]);
-            this.isDirty = true;
+        if (HImGui.colorPicker4("Color Pickier", this.color)) {
+            isDirty = true;
+        }
+        int newZIndex = HImGui.dragInt("Z-Index", this.zIndex);
+        if (zIndex != newZIndex){ //TODO Update Real Time
+            zIndex = newZIndex;
         }
     }
 }

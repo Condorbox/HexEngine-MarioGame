@@ -2,6 +2,7 @@ package Hex;
 
 import Components.Component;
 import Components.Transform;
+import imgui.ImGui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,14 +11,13 @@ public class GameObject {
     private static int ID_COUNTER = 0;
     private int uid = -1;
     private String name;
-    public Transform transform;
+    public transient Transform transform;
     private List<Component> components;
 
     private boolean doSerialization = true;
 
-    public GameObject(String name, Transform transform) {
+    public GameObject(String name) {
         this.name = name;
-        this.transform = transform;
         components = new ArrayList<>();
 
         this.uid = ID_COUNTER++;
@@ -60,7 +60,9 @@ public class GameObject {
 
     public void imGui() {
         for (Component component : components) {
-            component.imGui();
+            if (ImGui.collapsingHeader(component.getClass().getSimpleName())){
+                component.imGui();
+            }
         }
     }
 

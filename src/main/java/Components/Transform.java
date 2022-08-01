@@ -1,8 +1,9 @@
 package Components;
 
+import Editor.HImGui;
 import org.joml.Vector2f;
 
-public class Transform {
+public class Transform extends Component{
 
     public Vector2f position;
     public Vector2f scale;
@@ -34,11 +35,18 @@ public class Transform {
     }
 
     @Override
+    public void imGui() {
+        HImGui.drawVec2Control("Position", this.position, 0.0f);
+        HImGui.drawVec2Control("Scale", this.scale, 32.0f);
+        HImGui.dragFloat("Rotation", this.rotation);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == null) return false;
         if (!(o instanceof Transform)) return false;
 
         Transform t = (Transform) o;
-        return t.position.equals(this.position) && t.scale.equals(this.scale);
+        return t.position.equals(this.position) && t.scale.equals(this.scale) && t.rotation == this.rotation;
     }
 }

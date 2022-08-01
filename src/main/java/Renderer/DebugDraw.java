@@ -1,7 +1,7 @@
 package Renderer;
 
 import Hex.Window;
-import Util.JMath;
+import Util.HMath;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 import Util.AssetPool;
@@ -148,7 +148,7 @@ public class DebugDraw {
 
         if (rotation != 0.0f) {
             for (Vector2f vert : vertices) {
-                JMath.rotate(vert, rotation, center);
+                HMath.rotate(vert, rotation, center);
             }
         }
 
@@ -175,7 +175,7 @@ public class DebugDraw {
 
         for (int i=0; i < points.length; i++) {
             Vector2f tmp = new Vector2f(0, radius);
-            JMath.rotate(tmp, currentAngle, new Vector2f());
+            HMath.rotate(tmp, currentAngle, new Vector2f());
             points[i] = new Vector2f(tmp).add(center);
 
             if (i > 0) {

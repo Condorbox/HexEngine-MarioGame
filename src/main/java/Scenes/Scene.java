@@ -2,6 +2,7 @@ package Scenes;
 
 import Components.Component;
 import Components.ComponentDeserializer;
+import Components.Transform;
 import Hex.Camera;
 import Hex.GameObject;
 import Hex.GameObjectDeserializer;
@@ -120,6 +121,13 @@ public abstract class Scene {
             GameObject.init(maxGoId);
             levelLoaded = true;
         }
+    }
+
+    public GameObject createGameObject(String name) {
+        GameObject go = new GameObject(name);
+        go.addComponent(new Transform());
+        go.transform = go.getComponent(Transform.class);
+        return go;
     }
 
     public GameObject getGameObject(int gameObjectId) {
