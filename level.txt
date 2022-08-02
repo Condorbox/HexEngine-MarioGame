@@ -255,7 +255,7 @@
         "type": "Components.Transform",
         "properties": {
           "position": {
-            "x": 700.0,
+            "x": 700.70776,
             "y": 352.0
           },
           "scale": {
@@ -304,6 +304,40 @@
           },
           "zIndex": 0,
           "uid": 28
+        }
+      },
+      {
+        "type": "Physics2D.Components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 117
+        }
+      },
+      {
+        "type": "Physics2D.Components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 118
         }
       }
     ],

@@ -20,8 +20,10 @@ public class Rigidbody2D extends Component {
     @Override
     public void update(float dt) {
         if (rawBody != null) {
-            gameObject.transform.position.set(rawBody.getPosition().x, rawBody.getPosition().y);
-            gameObject.transform.rotation = (float)Math.toDegrees(rawBody.getAngle());
+            this.gameObject.transform.position.set(
+                    rawBody.getPosition().x, rawBody.getPosition().y
+            );
+            this.gameObject.transform.rotation = (float)Math.toDegrees(rawBody.getAngle());
         }
     }
 
