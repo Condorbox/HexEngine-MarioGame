@@ -38,7 +38,8 @@ public class Transform extends Component{
     public void imGui() {
         HImGui.drawVec2Control("Position", this.position, 0.0f);
         HImGui.drawVec2Control("Scale", this.scale, 32.0f);
-        HImGui.dragFloat("Rotation", this.rotation);
+        float newRotation =  HImGui.dragFloat("Rotation", this.rotation);
+        this.rotation = newRotation;
     }
 
     @Override

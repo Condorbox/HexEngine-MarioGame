@@ -2,6 +2,7 @@ package Hex;
 
 import Components.MouseControls;
 import Editor.GameViewWindow;
+import Editor.MenuBar;
 import Editor.PropertiesWindow;
 import Renderer.PickingTexture;
 import Scenes.Scene;
@@ -26,11 +27,13 @@ public class ImGuiLayer {
     private final ImGuiImplGl3 imGuiGl3 = new ImGuiImplGl3();
     private GameViewWindow gameViewWindow;
     private PropertiesWindow propertiesWindow;
+    private MenuBar menuBar;
 
     public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture) {
         this.glfwWindow = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
+        this.menuBar = new MenuBar();
     }
 
     // Initialize Dear ImGui.
@@ -197,6 +200,7 @@ public class ImGuiLayer {
         gameViewWindow.imGui();
         propertiesWindow.update(deltaTime, currentScene);
         propertiesWindow.imGui();
+        menuBar.imGui();
         ImGui.end();
         ImGui.render();
 

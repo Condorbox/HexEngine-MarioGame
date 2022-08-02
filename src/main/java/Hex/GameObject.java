@@ -15,6 +15,7 @@ public class GameObject {
     private List<Component> components;
 
     private boolean doSerialization = true;
+    private boolean isDead = false;
 
     public GameObject(String name) {
         this.name = name;
@@ -66,6 +67,17 @@ public class GameObject {
         }
     }
 
+    public void destroy() {
+        this.isDead = true;
+        for (int i=0; i < components.size(); i++) {
+            components.get(i).destroy();
+        }
+    }
+
+    public boolean isDead() {
+        return this.isDead;
+    }
+
     public void start() {
         for (int i = 0; i < components.size(); i++){
             components.get(i).start();
@@ -75,6 +87,12 @@ public class GameObject {
     public void update(float deltaTime) {
         for (int i = 0; i < components.size(); i++){
             components.get(i).update(deltaTime);
+        }
+    }
+
+    public void editorUpdate(float deltaTime) {
+        for (int i=0; i < components.size(); i++) {
+            components.get(i).editorUpdate(deltaTime);
         }
     }
 

@@ -24,16 +24,16 @@ public class EditorCamera extends Component {
     }
 
     @Override
-    public void update(float dt) {
+    public void editorUpdate(float deltaTime) {
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE) && dragDebounce > 0) {
             clickOrigin = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
-            dragDebounce -= dt;
+            dragDebounce -= deltaTime;
             return;
         } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)) {
             Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
             Vector2f delta = new Vector2f(mousePos).sub(this.clickOrigin);
-            levelEditorCamera.position.sub(delta.mul(dt).mul(dragSensitivity));
-            clickOrigin.lerp(mousePos, dt);
+            levelEditorCamera.position.sub(delta.mul(deltaTime).mul(dragSensitivity));
+            clickOrigin.lerp(mousePos, deltaTime);
         }
 
         if (dragDebounce <= 0.0f && !MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)) {
@@ -53,7 +53,7 @@ public class EditorCamera extends Component {
         if (reset) {
             levelEditorCamera.position.lerp(new Vector2f(), lerpTime);
             levelEditorCamera.setZoom(this.levelEditorCamera.getZoom() + ((1.0f - levelEditorCamera.getZoom()) * lerpTime));
-            lerpTime += 0.1f * dt;
+            lerpTime += 0.1f * deltaTime;
             if (Math.abs(levelEditorCamera.position.x) <= 5.0f && Math.abs(levelEditorCamera.position.y) <= 5.0f) {
                 lerpTime = 0.0f;
                 levelEditorCamera.position.set(0f, 0f);

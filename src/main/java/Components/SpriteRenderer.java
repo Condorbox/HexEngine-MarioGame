@@ -34,10 +34,19 @@ public class SpriteRenderer extends Component{
     public void start(){
         this.lastTransform = gameObject.transform.copy();
     }
+
     @Override
     public void update(float deltaTime) {
         if(!lastTransform.equals(gameObject.transform)){
             gameObject.transform.copy(lastTransform);
+            isDirty = true;
+        }
+    }
+
+    @Override
+    public void editorUpdate(float dt) {
+        if (!this.lastTransform.equals(this.gameObject.transform)) {
+            this.gameObject.transform.copy(this.lastTransform);
             isDirty = true;
         }
     }
@@ -69,7 +78,9 @@ public class SpriteRenderer extends Component{
     public boolean isDirty(){
         return isDirty;
     }
-
+    public void setDirty() {
+        this.isDirty = true;
+    }
     public void setClean(){
         isDirty = false;
     }

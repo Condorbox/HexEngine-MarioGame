@@ -1,13 +1,16 @@
 package Hex;
 
+import Observers.EventSystem;
+import Observers.Events.Event;
+import Observers.Observer;
 import Renderer.DebugDraw;
 import Renderer.Framebuffer;
 import Renderer.PickingTexture;
 import Renderer.Renderer;
 import Renderer.Shader;
-import Scenes.LevelEditorScene;
-import Scenes.LevelScene;
+import Scenes.LevelEditorSceneInitializer;
 import Scenes.Scene;
+import Scenes.SceneInitializer;
 import Util.AssetPool;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
@@ -18,7 +21,7 @@ import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11C.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
-public class Window {
+public class Window implements Observer {
     private int width;
     private int height;
     private String title;
@@ -26,33 +29,24 @@ public class Window {
     private ImGuiLayer imGuiLayer;
     private Framebuffer framebuffer;
     private PickingTexture pickingTexture;
-    public float r,g,b,a;
-
     private static Window window = null;
     private static Scene currentScene = null;
+    private boolean runtimePlaying = false;
 
     private Window(){
         this.width = 1920;
         this.height = 1080;
         this.title = "Mario";
-        this.r = 1.0f;
-        this.g = 1.0f;
-        this.b = 1.0f;
-        this.a = 1.0f;
+        EventSystem.addObserver(this);
     }
 
-    public static void changeScene(int newScene){
-        switch (newScene){
-            case 0:
-                currentScene = new LevelEditorScene();
-                break;
-            case 1:
-                currentScene = new LevelScene();
-                break;
-            default:
-                assert false : "Unknown scene: " + newScene;
+    public static void changeScene(SceneInitializer sceneInitializer){
+        if (currentScene != null){
+            currentScene.destroy();
         }
 
+        getImGuiLayer().getPropertiesWindow().setActiveGameObject(null);
+        currentScene = new Scene(sceneInitializer);
         currentScene.load();
         currentScene.init();
         currentScene.start();
@@ -144,7 +138,7 @@ public class Window {
         imGuiLayer = new ImGuiLayer(glfwWindow, pickingTexture);
         imGuiLayer.initImGui();
 
-        Window.changeScene(0);
+        Window.changeScene(new LevelEditorSceneInitializer());
     }
     private void loop(){
         float beginTime = (float) glfwGetTime();
@@ -178,14 +172,18 @@ public class Window {
 
             framebuffer.bind();
 
-            glClearColor(r, g, b, a);
+            glClearColor(1,1,1,1);
             glClear(GL_COLOR_BUFFER_BIT);
 
 
             if(deltaTime >= 0){
                 DebugDraw.draw();
                 Renderer.bindShader(defaultShader);
-                currentScene.update(deltaTime);
+                if (runtimePlaying){
+                    currentScene.update(deltaTime);
+                }else {
+                    currentScene.editorUpdate(deltaTime);
+                }
                 currentScene.render();
             }
 
@@ -200,8 +198,6 @@ public class Window {
             deltaTime = endTime - beginTime;
             beginTime = endTime;
         }
-
-        currentScene.saveExit();
     }
 
     public static int getWidth() {
@@ -231,4 +227,26 @@ public class Window {
     public static ImGuiLayer getImGuiLayer() {
         return get().imGuiLayer;
     }
+
+    @Override
+    public void onNotify(GameObject object, Event event) {
+        switch (event.type) {
+            case GameEngineStartPlay:
+                this.runtimePlaying = true;
+                currentScene.save();
+                Window.changeScene(new LevelEditorSceneInitializer());
+                break;
+            case GameEngineStopPlay:
+                this.runtimePlaying = false;
+                Window.changeScene(new LevelEditorSceneInitializer());
+                break;
+            case LoadLevel:
+                Window.changeScene(new LevelEditorSceneInitializer());
+                break;
+            case SaveLevel:
+                currentScene.save();
+                break;
+        }
+    }
 }
+
