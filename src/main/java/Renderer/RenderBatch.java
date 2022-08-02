@@ -47,11 +47,15 @@ public class RenderBatch implements Comparable<RenderBatch>{
     private int vaoID, vboID;
     private int maxBatchSize;
     private int zIndex;
+    private Renderer renderer;
 
-    public RenderBatch(int maxBatchSize, int zIndex) {
+
+    public RenderBatch(int maxBatchSize, int zIndex, Renderer renderer) {
         this.zIndex = zIndex;
         this.sprites = new SpriteRenderer[maxBatchSize];
         this.maxBatchSize = maxBatchSize;
+
+        this.renderer = renderer;
 
         // 4 vertices quads
         vertices = new float[maxBatchSize * 4 * VERTEX_SIZE];
@@ -122,6 +126,13 @@ public class RenderBatch implements Comparable<RenderBatch>{
                 loadVertexProperties(i);
                 spr.setClean();
                 rebufferData = true;
+            }
+
+            //TODO Better solution for this
+            if (spr.zIndex() != this.zIndex) {
+                destroyIfExists(spr.gameObject);
+                renderer.add(spr.gameObject);
+                i--;
             }
         }
 
@@ -203,15 +214,15 @@ public class RenderBatch implements Comparable<RenderBatch>{
 
 
         // Add vertices with the appropriate properties
-        float xAdd = 1.0f;
-        float yAdd = 1.0f;
+        float xAdd = 0.5f;
+        float yAdd = 0.5f;
         for (int i=0; i < 4; i++) {
             if (i == 1) {
-                yAdd = 0.0f;
+                yAdd = -0.5f;
             } else if (i == 2) {
-                xAdd = 0.0f;
+                xAdd = -0.5f;
             } else if (i == 3) {
-                yAdd = 1.0f;
+                yAdd = 0.5f;
             }
 
             Vector4f currentPos = new Vector4f(sprite.gameObject.transform.position.x + (xAdd * sprite.gameObject.transform.scale.x),

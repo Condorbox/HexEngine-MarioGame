@@ -6,6 +6,7 @@ import Hex.GameObject;
 import Hex.Prefabs;
 import Util.AssetPool;
 
+import Util.Settings;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
@@ -77,7 +78,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
             ImGui.pushID(i);
             if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
-                GameObject object = Prefabs.generateSpriteObject(sprite, 32, 32);
+                GameObject object = Prefabs.generateSpriteObject(sprite, Settings.GRID_WIDTH, Settings.GRID_HEIGHT);
                 levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
             }
             ImGui.popID();

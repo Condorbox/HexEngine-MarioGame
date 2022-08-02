@@ -102,9 +102,6 @@ public class SpriteRenderer extends Component{
         if (HImGui.colorPicker4("Color Pickier", this.color)) {
             isDirty = true;
         }
-        int newZIndex = HImGui.dragInt("Z-Index", this.zIndex);
-        if (zIndex != newZIndex){ //TODO Update Real Time
-            zIndex = newZIndex;
-        }
+        this.zIndex = HImGui.dragInt("Z-Index", this.zIndex);
     }
 }
