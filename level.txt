@@ -1,13 +1,13 @@
 [
   {
-    "uid": 169,
+    "uid": 0,
     "name": "Sprite_Object_Gen",
     "components": [
       {
         "type": "Components.Transform",
         "properties": {
           "position": {
-            "x": -246.50116,
+            "x": -246.49614,
             "y": 0.7039577
           },
           "scale": {
@@ -97,7 +97,7 @@
     "isDead": false
   },
   {
-    "uid": 170,
+    "uid": 1,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -194,7 +194,7 @@
     "isDead": false
   },
   {
-    "uid": 171,
+    "uid": 2,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -291,7 +291,7 @@
     "isDead": false
   },
   {
-    "uid": 172,
+    "uid": 3,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -354,7 +354,7 @@
     "isDead": false
   },
   {
-    "uid": 173,
+    "uid": 4,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -451,7 +451,7 @@
     "isDead": false
   },
   {
-    "uid": 174,
+    "uid": 5,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -466,6 +466,103 @@
             "y": 0.25
           },
           "rotation": -47.098,
+          "uid": 19
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.0,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 20
+        }
+      },
+      {
+        "type": "Physics2D.Components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 100.0,
+          "bodyType": "Dynamic",
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 40
+        }
+      },
+      {
+        "type": "Physics2D.Components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 41
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 6,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": -246.86546,
+            "y": 2.616616
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0015533449,
           "uid": 19
         }
       },

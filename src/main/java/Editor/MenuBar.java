@@ -8,7 +8,7 @@ import imgui.ImGui;
 
 public class MenuBar {
     public void imGui() {
-        ImGui.beginMainMenuBar();
+        ImGui.beginMenuBar();
 
         if (ImGui.beginMenu("File")) {
             if (ImGui.menuItem("Save", "Ctrl+S")) { //TODO Implement Shortcut
@@ -22,6 +22,6 @@ public class MenuBar {
             ImGui.endMenu();
         }
 
-        ImGui.endMainMenuBar();
+        ImGui.endMenuBar();
     }
 }
