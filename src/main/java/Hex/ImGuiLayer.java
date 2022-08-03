@@ -1,10 +1,9 @@
 package Hex;
 
-import Components.MouseControls;
 import Editor.GameViewWindow;
 import Editor.MenuBar;
 import Editor.PropertiesWindow;
-import Editor.SceneHeirarchyWindow;
+import Editor.SceneHierarchyWindow;
 import Renderer.PickingTexture;
 import Scenes.Scene;
 import imgui.*;
@@ -17,7 +16,6 @@ import imgui.type.ImBoolean;
 
 import static org.lwjgl.glfw.GLFW.*;
 
-import static org.lwjgl.glfw.GLFW.GLFW_KEY_TAB;
 import static org.lwjgl.opengl.GL11C.*;
 import static org.lwjgl.opengl.GL30C.GL_FRAMEBUFFER;
 import static org.lwjgl.opengl.GL30.glBindFramebuffer;
@@ -31,14 +29,14 @@ public class ImGuiLayer {
     private GameViewWindow gameViewWindow;
     private PropertiesWindow propertiesWindow;
     private MenuBar menuBar;
-    private SceneHeirarchyWindow sceneHeirarchyWindow;
+    private SceneHierarchyWindow sceneHierarchyWindow;
 
     public ImGuiLayer(long glfwWindow, PickingTexture pickingTexture) {
         this.glfwWindow = glfwWindow;
         this.gameViewWindow = new GameViewWindow();
         this.propertiesWindow = new PropertiesWindow(pickingTexture);
         this.menuBar = new MenuBar();
-        this.sceneHeirarchyWindow = new SceneHeirarchyWindow();
+        this.sceneHierarchyWindow = new SceneHierarchyWindow();
     }
 
     // Initialize Dear ImGui.
@@ -52,8 +50,8 @@ public class ImGuiLayer {
         final ImGuiIO io = ImGui.getIO();
 
         io.setIniFilename("imgui.ini"); // We don't want to save .ini file
-        io.setConfigFlags(ImGuiConfigFlags.DockingEnable);
-        io.setBackendFlags(ImGuiConfigFlags.ViewportsEnable);
+        io.addConfigFlags(ImGuiConfigFlags.DockingEnable);
+        io.addBackendFlags(ImGuiConfigFlags.ViewportsEnable);
         io.setBackendPlatformName("imgui_java_impl_glfw");
 
         // ------------------------------------------------------------
@@ -160,7 +158,7 @@ public class ImGuiLayer {
         gameViewWindow.imGui();
         propertiesWindow.update(deltaTime, currentScene);
         propertiesWindow.imGui();
-        sceneHeirarchyWindow.imGui();
+        sceneHierarchyWindow.imGui();
 
         endFrame();
     }

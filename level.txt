@@ -195,7 +195,7 @@
   },
   {
     "uid": 2,
-    "name": "Sprite_Object_Gen",
+    "name": "El pepe",
     "components": [
       {
         "type": "Components.Transform",
@@ -458,7 +458,7 @@
         "type": "Components.Transform",
         "properties": {
           "position": {
-            "x": -246.50926,
+            "x": -246.51448,
             "y": 2.616616
           },
           "scale": {
