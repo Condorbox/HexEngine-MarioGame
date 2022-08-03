@@ -2,6 +2,7 @@ package Components;
 
 import Editor.HImGui;
 import Renderer.Texture;
+import Util.AssetPool;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
 
@@ -17,21 +18,12 @@ public class SpriteRenderer extends Component{
 
     }
 
-    /*public SpriteRenderer(Vector4f color){
-        this.zIndex = 0;
-        this.color = color;
-        this.sprite = new Sprite(null);
-        isDirty = true;
-    }
-    public SpriteRenderer(Sprite sprite, int zIndex){
-        this.zIndex = zIndex;
-        this.sprite = sprite;
-        this.color = new Vector4f(1, 1, 1, 1);
-        isDirty = true;
-    }*/
-
     @Override
     public void start(){
+        if (this.sprite.getTexture() != null) {
+            this.sprite.setTexture(AssetPool.getTexture(this.sprite.getTexture().getFilePath()));
+        }
+
         this.lastTransform = gameObject.transform.copy();
     }
 
@@ -99,7 +91,7 @@ public class SpriteRenderer extends Component{
 
     @Override
     public void imGui(){
-        if (HImGui.colorPicker4("Color Pickier", this.color)) {
+        if (HImGui.colorPicker4("Color Picker", this.color)) {
             isDirty = true;
         }
         this.zIndex = HImGui.dragInt("Z-Index", this.zIndex);

@@ -25,11 +25,12 @@ public class PropertiesWindow {
     public void update(float deltaTime, Scene currentScene) {
         debounce -= deltaTime;
 
-        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0) {
+        if(!MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0) {
             int x = (int)MouseListener.getScreenX();
             int y = (int)MouseListener.getScreenY();
             int gameObjectId = pickingTexture.readPixel(x, y);
             GameObject pickedObj = currentScene.getGameObject(gameObjectId);
+            System.out.println(pickedObj);
             if (pickedObj != null && pickedObj.getComponent(NonPickable.class) == null) {
                 activeGameObject = pickedObj;
             } else if (pickedObj == null && !MouseListener.isDragging()) {
@@ -74,5 +75,9 @@ public class PropertiesWindow {
     }
     public void setActiveGameObject(GameObject go) {
         this.activeGameObject = go;
+    }
+
+    public PickingTexture getPickingTexture() {
+        return this.pickingTexture;
     }
 }
