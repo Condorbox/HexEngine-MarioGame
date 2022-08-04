@@ -46,7 +46,10 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         16, 16, 43, 0));
         AssetPool.addSpritesheet("Assets/Sprites/gizmos.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/gizmos.png"),
                 24, 48, 3, 0));
-
+        AssetPool.addSpritesheet("Assets/Sprites/spritesheet.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/spritesheet.png"),
+                        16, 16, 26, 0));
+        AssetPool.addSpritesheet("Assets/Sprites/items.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/items.png"),
+                        16, 16, 43, 0));
         for (GameObject go : scene.getGameObjects()) {
             if (go.getComponent(SpriteRenderer.class) != null) {
                 SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
