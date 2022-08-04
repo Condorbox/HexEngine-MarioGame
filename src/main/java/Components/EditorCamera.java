@@ -26,11 +26,11 @@ public class EditorCamera extends Component {
     @Override
     public void editorUpdate(float deltaTime) {
         if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE) && dragDebounce > 0) {
-            clickOrigin = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
+            clickOrigin = new Vector2f(MouseListener.getWorld());
             dragDebounce -= deltaTime;
             return;
         } else if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_MIDDLE)) {
-            Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
+            Vector2f mousePos = new Vector2f(MouseListener.getWorld());
             Vector2f delta = new Vector2f(mousePos).sub(this.clickOrigin);
             levelEditorCamera.position.sub(delta.mul(deltaTime).mul(dragSensitivity));
             clickOrigin.lerp(mousePos, deltaTime);
@@ -40,7 +40,7 @@ public class EditorCamera extends Component {
             dragDebounce = 0.1f;
         }
 
-        if (MouseListener.getScrollY() != 0.0f) {
+        if (MouseListener.getScrollY() != 0.0f) { //TODO Fix scroll
             float addValue = (float)Math.pow(Math.abs(MouseListener.getScrollY() * scrollSensitivity), 1 / levelEditorCamera.getZoom());
             addValue *= -Math.signum(MouseListener.getScrollY());
             levelEditorCamera.addZoom(addValue);

@@ -25,7 +25,7 @@ public class PropertiesWindow {
     public void update(float deltaTime, Scene currentScene) {
         debounce -= deltaTime;
 
-        if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0) {
+        if (!MouseListener.isDragging() && MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_LEFT) && debounce < 0) {
             int x = (int)MouseListener.getScreenX();
             int y = (int)MouseListener.getScreenY();
             int gameObjectId = pickingTexture.readPixel(x, y);
@@ -74,5 +74,9 @@ public class PropertiesWindow {
     }
     public void setActiveGameObject(GameObject go) {
         this.activeGameObject = go;
+    }
+
+    public PickingTexture getPickingTexture() {
+        return this.pickingTexture;
     }
 }

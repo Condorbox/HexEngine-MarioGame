@@ -50,21 +50,23 @@ public class Gizmo extends Component{
     public void start() {
         xAxisObject.transform.rotation = 90;
         yAxisObject.transform.rotation = 180;
-        xAxisObject.setNoSerialize();
-        yAxisObject.setNoSerialize();
         xAxisSprite.setZIndex(Integer.MAX_VALUE);
         yAxisSprite.setZIndex(Integer.MAX_VALUE);
+        xAxisObject.setNoSerialize();
+        yAxisObject.setNoSerialize();
     }
 
     @Override
-    public void update(float deltaTime){
+    public void update(float dt) {
         if (using) {
-            this.setInactive();
+            setInactive();
         }
+        xAxisObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0, 0, 0, 0));
+        yAxisObject.getComponent(SpriteRenderer.class).setColor(new Vector4f(0, 0, 0, 0));
     }
 
     @Override
-    public void editorUpdate(float deltaTime) {
+    public void editorUpdate(float dt) {
         if (!using) return;
 
         activeGameObject = this.propertiesWindow.getActiveGameObject();
@@ -76,7 +78,7 @@ public class Gizmo extends Component{
                     KeyListener.keyBeginPress(GLFW_KEY_D)) {
                 GameObject newObj = activeGameObject.copy();
                 Window.getScene().addGameObjectToScene(newObj);
-                newObj.transform.position.add(0.1f, 0f);
+                newObj.transform.position.add(0.1f, 0.1f);
                 propertiesWindow.setActiveGameObject(newObj);
                 return;
             } else if (KeyListener.keyBeginPress(GLFW_KEY_DELETE)) {
@@ -86,7 +88,7 @@ public class Gizmo extends Component{
                 return;
             }
         } else {
-            setInactive();
+            this.setInactive();
             return;
         }
 
@@ -104,11 +106,11 @@ public class Gizmo extends Component{
             yAxisActive = false;
         }
 
-        if (activeGameObject != null) {
-            xAxisObject.transform.position.set(activeGameObject.transform.position);
-            yAxisObject.transform.position.set(activeGameObject.transform.position);
-            xAxisObject.transform.position.add(xAxisOffset);
-            yAxisObject.transform.position.add(yAxisOffset);
+        if (this.activeGameObject != null) {
+            xAxisObject.transform.position.set(this.activeGameObject.transform.position);
+            yAxisObject.transform.position.set(this.activeGameObject.transform.position);
+            xAxisObject.transform.position.add(this.xAxisOffset);
+            yAxisObject.transform.position.add(this.yAxisOffset);
         }
     }
 
@@ -118,13 +120,13 @@ public class Gizmo extends Component{
     }
 
     private void setInactive() {
-        activeGameObject = null;
-        xAxisSprite.setColor(new Vector4f(0, 0, 0, 0));
-        yAxisSprite.setColor(new Vector4f(0, 0, 0, 0));
+        this.activeGameObject = null;
+        this.xAxisSprite.setColor(new Vector4f(0, 0, 0, 0));
+        this.yAxisSprite.setColor(new Vector4f(0, 0, 0, 0));
     }
 
     private boolean checkXHoverState() {
-        Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
+        Vector2f mousePos = new Vector2f(MouseListener.getWorldX(), MouseListener.getWorldY());
         if (mousePos.x <= xAxisObject.transform.position.x + (gizmoHeight / 2.0f) &&
                 mousePos.x >= xAxisObject.transform.position.x - (gizmoWidth / 2.0f) &&
                 mousePos.y >= xAxisObject.transform.position.y - (gizmoHeight / 2.0f) &&
@@ -138,7 +140,7 @@ public class Gizmo extends Component{
     }
 
     private boolean checkYHoverState() {
-        Vector2f mousePos = new Vector2f(MouseListener.getOrthoX(), MouseListener.getOrthoY());
+        Vector2f mousePos = new Vector2f(MouseListener.getWorldX(), MouseListener.getWorldY());
         if (mousePos.x <= yAxisObject.transform.position.x + (gizmoWidth / 2.0f) &&
                 mousePos.x >= yAxisObject.transform.position.x - (gizmoWidth / 2.0f) &&
                 mousePos.y <= yAxisObject.transform.position.y + (gizmoHeight / 2.0f) &&
@@ -156,7 +158,7 @@ public class Gizmo extends Component{
     }
 
     public void setNotUsing() {
-        this.using = false;
-        this.setInactive();
+        using = false;
+        setInactive();
     }
 }
