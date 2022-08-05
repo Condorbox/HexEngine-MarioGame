@@ -1,6 +1,7 @@
 package Editor;
 
 import Components.NonPickable;
+import Components.SpriteRenderer;
 import Hex.GameObject;
 import Hex.MouseListener;
 import Physics2D.Components.Box2DCollider;
@@ -9,6 +10,7 @@ import Physics2D.Components.Rigidbody2D;
 import Renderer.PickingTexture;
 import Scenes.Scene;
 import imgui.ImGui;
+import org.joml.Vector4f;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +21,11 @@ public class PropertiesWindow {
     private List<GameObject> activeGameObjects = null;
     private GameObject activeGameObject = null;
     private PickingTexture pickingTexture;
+    private List<Vector4f> activeGameObjectsOgColor;
 
     public PropertiesWindow(PickingTexture pickingTexture) {
         this.activeGameObjects = new ArrayList<>();
+        this.activeGameObjectsOgColor = new ArrayList<>();
         this.pickingTexture = pickingTexture;
     }
 
@@ -70,10 +74,28 @@ public class PropertiesWindow {
         return this.activeGameObjects;
     }
     public void addActiveGameObject(GameObject go) {
-        this.activeGameObjects.add(go);
+        SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+        if (spr != null ) {
+            activeGameObjectsOgColor.add(new Vector4f(spr.getColor()));
+            spr.setColor(new Vector4f(0.8f, 0.8f, 0.0f, 0.8f));
+        } else {
+            activeGameObjectsOgColor.add(new Vector4f());
+        }
+        activeGameObjects.add(go);
     }
     public void clearSelected() {
-        this.activeGameObjects.clear();
+        if (activeGameObjectsOgColor.size() > 0) {
+            int i = 0;
+            for (GameObject go : activeGameObjects) {
+                SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+                if (spr != null) {
+                    spr.setColor(activeGameObjectsOgColor.get(i));
+                }
+                i++;
+            }
+        }
+        activeGameObjects.clear();
+        activeGameObjectsOgColor.clear();
     }
 
     public PickingTexture getPickingTexture() {

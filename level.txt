@@ -3715,7 +3715,7 @@
                   "frameTime": 0.23
                 }
               ],
-              "time": 0.222836,
+              "time": 0.090755925,
               "doesLoop": true
             }
           ],
@@ -3885,7 +3885,7 @@
                   "frameTime": 0.23
                 }
               ],
-              "time": 0.20913361,
+              "time": 0.090755925,
               "doesLoop": false
             }
           ],
@@ -3898,7 +3898,7 @@
     "isDead": false
   },
   {
-    "uid": 65,
+    "uid": 58,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3933,19 +3933,19 @@
             },
             "texCoords": [
               {
-                "x": 0.14285715,
+                "x": 0.2857143,
                 "y": 1.0
               },
               {
+                "x": 0.2857143,
+                "y": 0.8
+              },
+              {
                 "x": 0.14285715,
                 "y": 0.8
               },
               {
-                "x": 0.0,
-                "y": 0.8
-              },
-              {
-                "x": 0.0,
+                "x": 0.14285715,
                 "y": 1.0
               }
             ],
@@ -4055,7 +4055,599 @@
                   "frameTime": 0.23
                 }
               ],
-              "time": 0.40882903,
+              "time": 0.111556515,
+              "doesLoop": true
+            }
+          ],
+          "defaultStateTitle": "Question",
+          "uid": 99
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 59,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.125,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 46
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": -1,
+          "uid": 47
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 60,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 2.875,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 49
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": -1,
+          "uid": 50
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 61,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.625,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 49
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": -1,
+          "uid": 50
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 62,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.875,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 49
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": -1,
+          "uid": 50
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 63,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.375,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 74
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.8
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 75
+        }
+      },
+      {
+        "type": "Components.StateMachine",
+        "properties": {
+          "stateTransfers": {},
+          "states": [
+            {
+              "title": "Question",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "time": 0.090755925,
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Question",
+          "uid": 76
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 64,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 4.125,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 97
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.8
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.8
+              },
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 98
+        }
+      },
+      {
+        "type": "Components.StateMachine",
+        "properties": {
+          "stateTransfers": {},
+          "states": [
+            {
+              "title": "Question",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "time": 0.111556515,
               "doesLoop": true
             }
           ],

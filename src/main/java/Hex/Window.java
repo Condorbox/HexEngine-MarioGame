@@ -3,6 +3,7 @@ package Hex;
 import Observers.EventSystem;
 import Observers.Events.Event;
 import Observers.Observer;
+import Physics2D.Physics2D;
 import Renderer.DebugDraw;
 import Renderer.Framebuffer;
 import Renderer.PickingTexture;
@@ -68,8 +69,10 @@ public class Window implements Observer {
         return Window.window;
     }
 
+    public static Physics2D getPhysics() { return currentScene.getPhysics(); }
+
     public static Scene getScene(){
-        return get().currentScene;
+        return currentScene;
     }
 
     public void run(){
@@ -220,6 +223,7 @@ public class Window implements Observer {
             imGuiLayer.update(deltaTime, currentScene);
 
             MouseListener.endFrame();
+            KeyListener.endFrame();
 
             glfwSwapBuffers(glfwWindow);
 

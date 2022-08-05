@@ -132,6 +132,10 @@ public class Scene {
         return go;
     }
 
+    public Physics2D getPhysics() {
+        return this.physics2D;
+    }
+
     public void save() {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
