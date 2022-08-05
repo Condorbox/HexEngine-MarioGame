@@ -212,11 +212,14 @@ public class Window implements Observer {
                     currentScene.editorUpdate(deltaTime);
                 }
                 currentScene.render();
+                DebugDraw.draw();
             }
 
             framebuffer.unbind();
 
             imGuiLayer.update(deltaTime, currentScene);
+
+            MouseListener.endFrame();
 
             glfwSwapBuffers(glfwWindow);
 
@@ -226,12 +229,12 @@ public class Window implements Observer {
         }
     }
 
-    public static int getWidth() {
-        return get().width;
+    public static int getWidth() { //TODO Change for real size
+        return 1920; // get().width;
     }
 
     public static int getHeight() {
-        return get().height;
+        return 1080; // get().height;
     }
 
     public static void setWidth(int newWidth) {
