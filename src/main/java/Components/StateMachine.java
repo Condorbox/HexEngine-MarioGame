@@ -1,6 +1,7 @@
 package Components;
 
 import imgui.ImGui;
+import imgui.type.ImBoolean;
 import imgui.type.ImString;
 
 import java.util.ArrayList;
@@ -120,6 +121,10 @@ public class StateMachine extends Component{
             ImString title = new ImString(state.title);
             ImGui.inputText("State: ", title);
             state.title = title.get();
+
+            ImBoolean doesLoop = new ImBoolean(state.getLoop());
+            ImGui.checkbox("Loop", doesLoop);
+            state.setLoop(doesLoop.get());
 
             int index = 0;
             for (Frame frame : state.animationFrames) {

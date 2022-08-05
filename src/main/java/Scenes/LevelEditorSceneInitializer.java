@@ -4,12 +4,16 @@ import Components.*;
 
 import Hex.GameObject;
 import Hex.Prefabs;
+import Hex.Sound;
 import Util.AssetPool;
 
 import Util.Settings;
 import imgui.ImGui;
 import imgui.ImVec2;
 import org.joml.Vector2f;
+
+import java.io.File;
+import java.util.Collection;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {
     private Spritesheet spritesheet;
@@ -50,6 +54,23 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         16, 16, 26, 0));
         AssetPool.addSpritesheet("Assets/Sprites/items.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/items.png"),
                         16, 16, 43, 0));
+
+        AssetPool.addSound("Assets/Sounds/main-theme-overworld.ogg", true);
+        AssetPool.addSound("Assets/Sounds/flagpole.ogg", false);
+        AssetPool.addSound("Assets/Sounds/break_block.ogg", false);
+        AssetPool.addSound("Assets/Sounds/bump.ogg", false);
+        AssetPool.addSound("Assets/Sounds/coin.ogg", false);
+        AssetPool.addSound("Assets/Sounds/gameover.ogg", false);
+        AssetPool.addSound("Assets/Sounds/jump-small.ogg", false);
+        AssetPool.addSound("Assets/Sounds/mario_die.ogg", false);
+        AssetPool.addSound("Assets/Sounds/pipe.ogg", false);
+        AssetPool.addSound("Assets/Sounds/powerup.ogg", false);
+        AssetPool.addSound("Assets/Sounds/powerup_appears.ogg", false);
+        AssetPool.addSound("Assets/Sounds/stage_clear.ogg", false);
+        AssetPool.addSound("Assets/Sounds/stomp.ogg", false);
+        AssetPool.addSound("Assets/Sounds/kick.ogg", false);
+        AssetPool.addSound("Assets/Sounds/invincible.ogg", false);
+
         for (GameObject go : scene.getGameObjects()) {
             if (go.getComponent(SpriteRenderer.class) != null) {
                 SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
@@ -131,6 +152,25 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                 if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
                     GameObject object = Prefabs.generateQuestionBlock();
                     levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
+                }
+
+                ImGui.endTabItem();
+            }
+            if (ImGui.beginTabItem("Sounds")) {
+                Collection<Sound> sounds = AssetPool.getAllSounds();
+                for (Sound sound : sounds) {
+                    File tmp = new File(sound.getFilepath());
+                    if (ImGui.button(tmp.getName())) {
+                        if (!sound.isPlaying()) {
+                            sound.play();
+                        } else {
+                            sound.stop();
+                        }
+                    }
+
+                    if (ImGui.getContentRegionAvailX() > 100) {
+                        ImGui.sameLine();
+                    }
                 }
 
                 ImGui.endTabItem();
