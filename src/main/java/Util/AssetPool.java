@@ -2,6 +2,7 @@ package Util;
 
 import Components.Spritesheet;
 import Hex.Sound;
+import Renderer.Font.HFont;
 import Renderer.Shader;
 import Renderer.Texture;
 
@@ -15,6 +16,7 @@ public class AssetPool {
     private static Map<String, Texture> textures = new HashMap<>();
     private static Map<String, Spritesheet> spritesheets = new HashMap<>();
     private static Map<String, Sound> sounds = new HashMap<>();
+    private static Map<String, HFont> fonts = new HashMap<>();
 
     public static Shader getShader(String resourceName) {
         File file = new File(resourceName);
@@ -79,5 +81,27 @@ public class AssetPool {
             AssetPool.sounds.put(file.getAbsolutePath(), sound);
             return sound;
         }
+    }
+
+    public static HFont addFont(String fontFile, int size) {
+        File file = new File(fontFile);
+        if (fonts.containsKey(file.getAbsolutePath())) {
+            return fonts.get(file.getAbsolutePath());
+        } else {
+            HFont font = new HFont(file.getAbsolutePath(), size);
+            AssetPool.fonts.put(file.getAbsolutePath(), font);
+            return font;
+        }
+    }
+
+    public static HFont getFont(String fontFile) {
+        File file = new File(fontFile);
+        if (fonts.containsKey(file.getAbsolutePath())) {
+            return fonts.get(file.getAbsolutePath());
+        } else {
+            assert false : "Font file not added '" + fontFile + "'";
+        }
+
+        return null;
     }
 }

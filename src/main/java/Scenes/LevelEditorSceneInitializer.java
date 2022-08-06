@@ -5,6 +5,7 @@ import Components.*;
 import Hex.GameObject;
 import Hex.Prefabs;
 import Hex.Sound;
+import Renderer.Font.HFont;
 import Util.AssetPool;
 
 import Util.Settings;
@@ -37,6 +38,7 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(scene.camera()));
         levelEditorComponents.addComponent(new GizmoSystem(gizmos));
+        levelEditorComponents.addComponent(new FontRenderer());
         scene.addGameObjectToScene(levelEditorComponents);
     }
 
