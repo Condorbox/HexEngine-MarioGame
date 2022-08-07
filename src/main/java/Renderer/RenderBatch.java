@@ -3,7 +3,6 @@ package Renderer;
 import Components.SpriteRenderer;
 import Hex.GameObject;
 import Hex.Window;
-import Util.AssetPool;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector4f;

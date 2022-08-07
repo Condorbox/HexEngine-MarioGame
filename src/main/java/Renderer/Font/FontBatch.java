@@ -51,9 +51,6 @@ public class FontBatch {
     }
 
     public void initBatch() {
-        projection.identity();
-        projection.ortho(0, 800, 0, 600, 1f, 100f);
-
         vao = glGenVertexArrays();
         glBindVertexArray(vao);
 
@@ -82,9 +79,9 @@ public class FontBatch {
 
         // Draw the buffer that we just uploaded
         shader.use();
-        glActiveTexture(GL_TEXTURE0);
+        glActiveTexture(GL_TEXTURE31);
         glBindTexture(GL_TEXTURE_BUFFER, font.textureId);
-        shader.uploadTexture("uFontTexture", 0);
+        shader.uploadTexture("uFontTexture", 31);
         shader.uploadMat4f("uProjection", projection);
 
         glBindVertexArray(vao);

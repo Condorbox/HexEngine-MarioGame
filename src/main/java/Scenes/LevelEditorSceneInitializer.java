@@ -5,6 +5,9 @@ import Components.*;
 import Hex.GameObject;
 import Hex.Prefabs;
 import Hex.Sound;
+import Physics2D.Components.Box2DCollider;
+import Physics2D.Components.Rigidbody2D;
+import Physics2D.Enums.BodyType;
 import Renderer.Font.HFont;
 import Util.AssetPool;
 
@@ -38,7 +41,6 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         levelEditorComponents.addComponent(new GridLines());
         levelEditorComponents.addComponent(new EditorCamera(scene.camera()));
         levelEditorComponents.addComponent(new GizmoSystem(gizmos));
-        levelEditorComponents.addComponent(new FontRenderer());
         scene.addGameObjectToScene(levelEditorComponents);
     }
 
@@ -57,6 +59,12 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                         16, 16, 26, 0));
         AssetPool.addSpritesheet("Assets/Sprites/items.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/items.png"),
                         16, 16, 43, 0));
+        AssetPool.addSpritesheet("Assets/Sprites/turtle.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/turtle.png"),
+                        16, 24, 4, 0));
+        AssetPool.addSpritesheet("Assets/Sprites/bigSpritesheet.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/bigSpritesheet.png"),
+                        16, 32, 42, 0));
+        AssetPool.addSpritesheet("Assets/Sprites/pipes.png", new Spritesheet(AssetPool.getTexture("Assets/Sprites/pipes.png"),
+                        32, 32, 4, 0));
 
         AssetPool.addSound("Assets/Sounds/main-theme-overworld.ogg", true);
         AssetPool.addSound("Assets/Sounds/flagpole.ogg", false);
@@ -109,6 +117,9 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
                 float windowX2 = windowPos.x + windowSize.x;
                 for (int i = 0; i < spritesheet.size(); i++) {
+                    if (i == 34) continue;
+                    if (i >= 38 && i < 61) continue;
+
                     Sprite sprite = spritesheet.getSprite(i);
                     float spriteWidth = sprite.getWidth() * 4;
                     float spriteHeight = sprite.getHeight() * 4;
@@ -118,6 +129,16 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     ImGui.pushID(i);
                     if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
                         GameObject object = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f);
+                        Rigidbody2D rb = new Rigidbody2D();
+                        rb.setBodyType(BodyType.Static);
+                        object.addComponent(rb);
+                        Box2DCollider b2d = new Box2DCollider();
+                        b2d.setHalfSize(new Vector2f(0.25f, 0.25f));
+                        object.addComponent(b2d);
+                        object.addComponent(new Ground());
+                        if (i == 12) {
+                            //object.addComponent(new BreakableBrick());
+                        }
                         levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
                     }
                     ImGui.popID();

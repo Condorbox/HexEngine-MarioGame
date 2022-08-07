@@ -5,7 +5,6 @@ import Observers.Events.Event;
 import Observers.Observer;
 import Physics2D.Physics2D;
 import Renderer.DebugDraw;
-import Renderer.Font.FontBatch;
 import Renderer.Framebuffer;
 import Renderer.PickingTexture;
 import Renderer.Renderer;
