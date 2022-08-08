@@ -37,6 +37,12 @@ public class Rigidbody2D extends Component {
         }
     }
 
+    public void setPosition(Vector2f newPos) {
+        if (rawBody != null) {
+            rawBody.setTransform(new Vec2(newPos.x, newPos.y), gameObject.transform.rotation);
+        }
+    }
+
     public void addVelocity(Vector2f forceToAdd) {
         if (rawBody != null) {
             rawBody.applyForceToCenter(new Vec2(forceToAdd.x, forceToAdd.y));
