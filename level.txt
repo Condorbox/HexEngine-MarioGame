@@ -1,6 +1,6 @@
 [
   {
-    "uid": 142,
+    "uid": 0,
     "name": "Mario",
     "components": [
       {
@@ -610,7 +610,7 @@
                   "frameTime": 0.1
                 }
               ],
-              "time": 0.030389406,
+              "time": 0.0302063,
               "doesLoop": false
             },
             {
@@ -1377,7 +1377,7 @@
     "isDead": false
   },
   {
-    "uid": 143,
+    "uid": 1,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -1484,7 +1484,7 @@
     "isDead": false
   },
   {
-    "uid": 144,
+    "uid": 2,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -1591,7 +1591,7 @@
     "isDead": false
   },
   {
-    "uid": 145,
+    "uid": 3,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -1698,7 +1698,7 @@
     "isDead": false
   },
   {
-    "uid": 146,
+    "uid": 4,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -1805,7 +1805,7 @@
     "isDead": false
   },
   {
-    "uid": 147,
+    "uid": 5,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -1912,7 +1912,7 @@
     "isDead": false
   },
   {
-    "uid": 148,
+    "uid": 6,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2019,7 +2019,7 @@
     "isDead": false
   },
   {
-    "uid": 149,
+    "uid": 7,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2126,7 +2126,7 @@
     "isDead": false
   },
   {
-    "uid": 150,
+    "uid": 8,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2233,7 +2233,7 @@
     "isDead": false
   },
   {
-    "uid": 151,
+    "uid": 9,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2340,7 +2340,7 @@
     "isDead": false
   },
   {
-    "uid": 152,
+    "uid": 10,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2447,7 +2447,7 @@
     "isDead": false
   },
   {
-    "uid": 153,
+    "uid": 11,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2554,7 +2554,7 @@
     "isDead": false
   },
   {
-    "uid": 154,
+    "uid": 12,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2661,7 +2661,7 @@
     "isDead": false
   },
   {
-    "uid": 155,
+    "uid": 13,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2768,7 +2768,7 @@
     "isDead": false
   },
   {
-    "uid": 156,
+    "uid": 14,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2875,7 +2875,7 @@
     "isDead": false
   },
   {
-    "uid": 157,
+    "uid": 15,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -2982,7 +2982,7 @@
     "isDead": false
   },
   {
-    "uid": 158,
+    "uid": 16,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3089,7 +3089,7 @@
     "isDead": false
   },
   {
-    "uid": 159,
+    "uid": 17,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3196,7 +3196,7 @@
     "isDead": false
   },
   {
-    "uid": 160,
+    "uid": 18,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3303,7 +3303,7 @@
     "isDead": false
   },
   {
-    "uid": 161,
+    "uid": 19,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3410,7 +3410,7 @@
     "isDead": false
   },
   {
-    "uid": 162,
+    "uid": 20,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3517,7 +3517,7 @@
     "isDead": false
   },
   {
-    "uid": 163,
+    "uid": 21,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3624,7 +3624,7 @@
     "isDead": false
   },
   {
-    "uid": 164,
+    "uid": 22,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3731,7 +3731,7 @@
     "isDead": false
   },
   {
-    "uid": 165,
+    "uid": 23,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3838,7 +3838,7 @@
     "isDead": false
   },
   {
-    "uid": 166,
+    "uid": 24,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -3945,7 +3945,7 @@
     "isDead": false
   },
   {
-    "uid": 167,
+    "uid": 25,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4052,7 +4052,7 @@
     "isDead": false
   },
   {
-    "uid": 168,
+    "uid": 26,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4159,7 +4159,7 @@
     "isDead": false
   },
   {
-    "uid": 169,
+    "uid": 27,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4266,7 +4266,7 @@
     "isDead": false
   },
   {
-    "uid": 170,
+    "uid": 28,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4373,7 +4373,7 @@
     "isDead": false
   },
   {
-    "uid": 171,
+    "uid": 29,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4480,7 +4480,7 @@
     "isDead": false
   },
   {
-    "uid": 172,
+    "uid": 30,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4587,7 +4587,7 @@
     "isDead": false
   },
   {
-    "uid": 173,
+    "uid": 31,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4694,7 +4694,7 @@
     "isDead": false
   },
   {
-    "uid": 174,
+    "uid": 32,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4801,7 +4801,7 @@
     "isDead": false
   },
   {
-    "uid": 175,
+    "uid": 33,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -4908,7 +4908,7 @@
     "isDead": false
   },
   {
-    "uid": 176,
+    "uid": 34,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5015,7 +5015,7 @@
     "isDead": false
   },
   {
-    "uid": 177,
+    "uid": 35,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5122,7 +5122,7 @@
     "isDead": false
   },
   {
-    "uid": 178,
+    "uid": 36,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5229,7 +5229,7 @@
     "isDead": false
   },
   {
-    "uid": 179,
+    "uid": 37,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5336,7 +5336,7 @@
     "isDead": false
   },
   {
-    "uid": 180,
+    "uid": 38,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5443,7 +5443,7 @@
     "isDead": false
   },
   {
-    "uid": 181,
+    "uid": 39,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5550,7 +5550,7 @@
     "isDead": false
   },
   {
-    "uid": 182,
+    "uid": 40,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5657,7 +5657,7 @@
     "isDead": false
   },
   {
-    "uid": 183,
+    "uid": 41,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5764,7 +5764,7 @@
     "isDead": false
   },
   {
-    "uid": 184,
+    "uid": 42,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5871,7 +5871,7 @@
     "isDead": false
   },
   {
-    "uid": 185,
+    "uid": 43,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -5978,7 +5978,7 @@
     "isDead": false
   },
   {
-    "uid": 186,
+    "uid": 44,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6085,7 +6085,7 @@
     "isDead": false
   },
   {
-    "uid": 187,
+    "uid": 45,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6192,7 +6192,7 @@
     "isDead": false
   },
   {
-    "uid": 188,
+    "uid": 46,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6299,7 +6299,7 @@
     "isDead": false
   },
   {
-    "uid": 189,
+    "uid": 47,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6406,7 +6406,7 @@
     "isDead": false
   },
   {
-    "uid": 190,
+    "uid": 48,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6513,7 +6513,7 @@
     "isDead": false
   },
   {
-    "uid": 191,
+    "uid": 49,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6627,7 +6627,7 @@
     "isDead": false
   },
   {
-    "uid": 192,
+    "uid": 50,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6741,7 +6741,7 @@
     "isDead": false
   },
   {
-    "uid": 193,
+    "uid": 51,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6855,7 +6855,7 @@
     "isDead": false
   },
   {
-    "uid": 194,
+    "uid": 52,
     "name": "Sprite_Object_Gen",
     "components": [
       {
@@ -6969,7 +6969,7 @@
     "isDead": false
   },
   {
-    "uid": 195,
+    "uid": 53,
     "name": "Question_Block",
     "components": [
       {
@@ -7004,19 +7004,19 @@
             },
             "texCoords": [
               {
-                "x": 0.42857143,
+                "x": 0.2857143,
                 "y": 1.0
               },
               {
-                "x": 0.42857143,
-                "y": 0.8
-              },
-              {
                 "x": 0.2857143,
                 "y": 0.8
               },
               {
-                "x": 0.2857143,
+                "x": 0.14285715,
+                "y": 0.8
+              },
+              {
+                "x": 0.14285715,
                 "y": 1.0
               }
             ],
@@ -7134,7 +7134,7 @@
                   "frameTime": 0.23
                 }
               ],
-              "time": 0.08421753,
+              "time": 0.22312783,
               "doesLoop": true
             },
             {
@@ -7229,6 +7229,647 @@
         "type": "Components.Ground",
         "properties": {
           "uid": 313
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 54,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.375,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 334
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 1.0
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.8
+              },
+              {
+                "x": 0.2857143,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 335
+        }
+      },
+      {
+        "type": "Components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Question",
+                "trigger": "setInactive"
+              },
+              "Inactive"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Question",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "time": 0.04073952,
+              "doesLoop": true
+            },
+            {
+              "title": "Inactive",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.5714286,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.5714286,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "time": 0.0,
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Question",
+          "uid": 336
+        }
+      },
+      {
+        "type": "Components.QuestionBlock",
+        "properties": {
+          "blockType": "Powerup",
+          "bopSpeed": 0.4,
+          "uid": 337
+        }
+      },
+      {
+        "type": "Physics2D.Components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 338
+        }
+      },
+      {
+        "type": "Physics2D.Components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 339
+        }
+      },
+      {
+        "type": "Components.Ground",
+        "properties": {
+          "uid": 340
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 55,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 3.875,
+            "y": 1.125
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 334
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/items.png",
+              "width": 112,
+              "height": 80
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 0.8
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 335
+        }
+      },
+      {
+        "type": "Components.StateMachine",
+        "properties": {
+          "stateTransfers": [
+            [
+              {
+                "state": "Question",
+                "trigger": "setInactive"
+              },
+              "Inactive"
+            ]
+          ],
+          "states": [
+            {
+              "title": "Question",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.0,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.57
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.14285715,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                },
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.2857143,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.23
+                }
+              ],
+              "time": 0.57,
+              "doesLoop": true
+            },
+            {
+              "title": "Inactive",
+              "animationFrames": [
+                {
+                  "sprite": {
+                    "texture": {
+                      "filePath": "Assets/Sprites/items.png",
+                      "width": 112,
+                      "height": 80
+                    },
+                    "texCoords": [
+                      {
+                        "x": 0.5714286,
+                        "y": 1.0
+                      },
+                      {
+                        "x": 0.5714286,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 0.8
+                      },
+                      {
+                        "x": 0.42857143,
+                        "y": 1.0
+                      }
+                    ],
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "frameTime": 0.1
+                }
+              ],
+              "time": 0.0,
+              "doesLoop": false
+            }
+          ],
+          "defaultStateTitle": "Question",
+          "uid": 336
+        }
+      },
+      {
+        "type": "Components.QuestionBlock",
+        "properties": {
+          "blockType": "Powerup",
+          "bopSpeed": 0.4,
+          "uid": 337
+        }
+      },
+      {
+        "type": "Physics2D.Components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 338
+        }
+      },
+      {
+        "type": "Physics2D.Components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 339
+        }
+      },
+      {
+        "type": "Components.Ground",
+        "properties": {
+          "uid": 340
+        }
+      }
+    ],
+    "doSerialization": true,
+    "isDead": false
+  },
+  {
+    "uid": 56,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "Components.Transform",
+        "properties": {
+          "position": {
+            "x": 5.375,
+            "y": 0.625
+          },
+          "scale": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "rotation": 0.0,
+          "uid": 361
+        }
+      },
+      {
+        "type": "Components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "texture": {
+              "filePath": "Assets/Sprites/decorationsAndBlocks.png",
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 1.0
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.0,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ],
+            "width": 16.0,
+            "height": 16.0
+          },
+          "zIndex": 0,
+          "uid": 362
+        }
+      },
+      {
+        "type": "Physics2D.Components.Rigidbody2D",
+        "properties": {
+          "velocity": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "angularDamping": 0.8,
+          "linearDamping": 0.9,
+          "mass": 0.0,
+          "bodyType": "Static",
+          "friction": 0.1,
+          "angularVelocity": 0.0,
+          "gravityScale": 1.0,
+          "isSensor": false,
+          "fixedRotation": false,
+          "continuousCollision": true,
+          "uid": 363
+        }
+      },
+      {
+        "type": "Physics2D.Components.Box2DCollider",
+        "properties": {
+          "halfSize": {
+            "x": 0.25,
+            "y": 0.25
+          },
+          "origin": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "uid": 364
+        }
+      },
+      {
+        "type": "Components.Ground",
+        "properties": {
+          "uid": 365
         }
       }
     ],
