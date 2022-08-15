@@ -2,6 +2,7 @@ package Components;
 
 import Hex.GameObject;
 import Hex.KeyListener;
+import Hex.Prefabs;
 import Hex.Window;
 import Physics2D.Components.PillboxCollider;
 import Physics2D.Components.Rigidbody2D;
@@ -162,6 +163,18 @@ public class PlayerController extends Component {
             if (this.velocity.x == 0) {
                 this.stateMachine.trigger("stopRunning");
             }
+        }
+
+        if (KeyListener.keyBeginPress(GLFW_KEY_E) && playerState == PlayerState.Fire &&
+                Fireball.canSpawn()) {
+            Vector2f position = new Vector2f(this.gameObject.transform.position)
+                    .add(this.gameObject.transform.scale.x > 0
+                            ? new Vector2f(0.26f, 0)
+                            : new Vector2f(-0.26f, 0));
+            GameObject fireball = Prefabs.generateFireball(position);
+            fireball.getComponent(Fireball.class).goingRight =
+                    this.gameObject.transform.scale.x > 0;
+            Window.getScene().addGameObjectToScene(fireball);
         }
 
         checkOnGround();
