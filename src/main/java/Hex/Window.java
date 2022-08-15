@@ -10,9 +10,11 @@ import Renderer.PickingTexture;
 import Renderer.Renderer;
 import Renderer.Shader;
 import Scenes.LevelEditorSceneInitializer;
+import Scenes.LevelSceneInitializer;
 import Scenes.Scene;
 import Scenes.SceneInitializer;
 import Util.AssetPool;
+import org.joml.Vector4f;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.openal.AL;
@@ -201,8 +203,8 @@ public class Window implements Observer {
             DebugDraw.beginFrame();
 
             framebuffer.bind();
-
-            glClearColor(1,1,1,1);
+            Vector4f clearColor = currentScene.camera().clearColor;
+            glClearColor(clearColor.x, clearColor.y, clearColor.z, clearColor.w);
             glClear(GL_COLOR_BUFFER_BIT);
 
 
@@ -267,7 +269,7 @@ public class Window implements Observer {
             case GameEngineStartPlay:
                 this.runtimePlaying = true;
                 currentScene.save();
-                Window.changeScene(new LevelEditorSceneInitializer());
+                Window.changeScene(new LevelSceneInitializer());
                 break;
             case GameEngineStopPlay:
                 this.runtimePlaying = false;

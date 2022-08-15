@@ -10,6 +10,7 @@ import Physics2D.Physics2D;
 import Physics2D.RaycastInfo;
 import Renderer.DebugDraw;
 import Scenes.LevelEditorSceneInitializer;
+import Scenes.LevelSceneInitializer;
 import Util.AssetPool;
 import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
@@ -76,7 +77,7 @@ public class PlayerController extends Component {
                 this.rb.setVelocity(this.velocity);
                 this.rb.setAngularVelocity(0);
             } else if (!deadGoingUp && gameObject.transform.position.y <= deadMinHeight) {
-                Window.changeScene(new LevelEditorSceneInitializer());
+                Window.changeScene(new LevelSceneInitializer());
             }
             return;
         }

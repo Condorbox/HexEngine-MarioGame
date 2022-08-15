@@ -78,12 +78,6 @@ public class Scene {
         Optional<GameObject> result = gameObjects.stream().filter(gameObject -> gameObject.uid() == gameObjectId).findFirst();
         return result.orElse(null);
     }
-    public GameObject getGameObject(String gameObjectName) {
-        Optional<GameObject> result = this.gameObjects.stream()
-                .filter(gameObject -> gameObject.name.equals(gameObjectName))
-                .findFirst();
-        return result.orElse(null);
-    }
 
     public void editorUpdate(float deltaTime) {
         this.camera.adjustProjection();
@@ -151,6 +145,23 @@ public class Scene {
         go.addComponent(new Transform());
         go.transform = go.getComponent(Transform.class);
         return go;
+    }
+
+    public <T extends Component> GameObject getGameObjectWith(Class<T> clazz) {
+        for (GameObject go : gameObjects) {
+            if (go.getComponent(clazz) != null) {
+                return go;
+            }
+        }
+
+        return null;
+    }
+
+    public GameObject getGameObject(String gameObjectName) {
+        Optional<GameObject> result = this.gameObjects.stream()
+                .filter(gameObject -> gameObject.name.equals(gameObjectName))
+                .findFirst();
+        return result.orElse(null);
     }
 
     public Physics2D getPhysics() {
