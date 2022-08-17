@@ -12,7 +12,7 @@ import java.util.List;
 import static org.lwjgl.glfw.GLFW.*;
 
 public class KeyControls extends Component {
-    private float debounceTime = 0.2f;
+    private final float debounceTime = 0.2f;
     private float debounce = 0.0f;
 
     @Override

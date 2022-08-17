@@ -4,18 +4,19 @@ import Hex.GameObject;
 import Hex.KeyListener;
 import Hex.Prefabs;
 import Hex.Window;
+
 import Physics2D.Components.PillboxCollider;
 import Physics2D.Components.Rigidbody2D;
 import Physics2D.Enums.BodyType;
 import Physics2D.Physics2D;
-import Physics2D.RaycastInfo;
-import Renderer.DebugDraw;
+
 import Scenes.LevelEditorSceneInitializer;
 import Scenes.LevelSceneInitializer;
+
 import Util.AssetPool;
+
 import org.jbox2d.dynamics.contacts.Contact;
 import org.joml.Vector2f;
-import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -235,7 +236,7 @@ public class PlayerController extends Component {
             if (pb != null) {
                 jumpBoost *= bigJumpBoostFactor;
                 walkSpeed *= bigJumpBoostFactor;
-                pb.setHeight(0.63f);
+                pb.setHeight(0.42f);
             }
         } else if (playerState == PlayerState.Big) {
             playerState = PlayerState.Fire;
@@ -319,7 +320,7 @@ public class PlayerController extends Component {
             if (pb != null) {
                 jumpBoost /= bigJumpBoostFactor;
                 walkSpeed /= bigJumpBoostFactor;
-                pb.setHeight(0.31f);
+                pb.setHeight(0.25f);
             }
             hurtInvincibilityTimeLeft = hurtInvincibilityTime;
             AssetPool.getSound("Assets/Sounds/pipe.ogg").play();

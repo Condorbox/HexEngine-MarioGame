@@ -135,7 +135,6 @@ public class Physics2D {
         assert body != null : "Raw body must not be null";
 
         addBox2DCollider(rb, pb.getBox());
-        addCircleCollider(rb, pb.getTopCircle());
         addCircleCollider(rb, pb.getBottomCircle());
     }
 

@@ -311,8 +311,18 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
                     levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
                 }
                 ImGui.popID();
-
                 ImGui.endTabItem();
+
+                sprite = items.getSprite(7);
+                id = sprite.getTexId();
+                texCoords = sprite.getTexCoords();
+                ImGui.pushID(uid++);
+                if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+                    GameObject object = Prefabs.generateCoin();
+                    levelEditorComponents.getComponent(MouseControls.class).pickupObject(object);
+                }
+                ImGui.popID();
+                ImGui.sameLine();
             }
 
             if (ImGui.beginTabItem("Sounds")) {
